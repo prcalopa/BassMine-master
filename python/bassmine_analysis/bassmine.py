@@ -5,11 +5,6 @@ import utility_functions as uf
 import markov
 import pickle
 import json
-# Extract data from midi:
-#   binary rhythms
-#   markov:
-#       temporal bass
-#       kick - bass interlocking
 
 
 def write2pickle(name,data, path='models/'):
@@ -28,8 +23,19 @@ def write2json(name, data, path='models/'):
 	:param path: path where the json file will be stored
 	:return:
 	"""
+	tmp = []
+
+	# reshape nd-arrays
+	if len(data.shape) > 1:
+		data = data.reshape((data.shape[0] * data.shape[1], 1))
+		for d in data:
+			tmp.append(float(d))
+		data = tmp
+	elif len(data.shape) == 1:
+		data = data.tolist()
+
 	with open(path + name + '.json', 'w') as outfile:
-		json.dump(data.tolist(), outfile)
+		json.dump(data, outfile)
 
 
 def quantize_pattern(pattern):
