@@ -1,14 +1,28 @@
 //Read models from json file
 outlets = 1
+autowatch = 1
 
 var memstr;
+var init_arr = [];
+var temporal_arr = [];
+var interlocking_arr = [];
+
+// Predefined paths
+var init_path = "initial.json";
+var temporal_path = "temporal.json";
+var interlocking_path = "interlocking.json";
 
 function readJSON(p){
+
 	memstr = "";
 	data = "";
 	maxchars = 800;
 	path = p;
-	var f = new File(path,"read");
+
+	// Read initial model
+	init_arr = []
+
+	var f = new File(path.concat(init_path),"read");
 	f.open();
 	if (f.isopen) {
 		while(f.position<f.eof) {
@@ -19,22 +33,84 @@ function readJSON(p){
 		post("Error\n");
 	}
 	
-
 	var parsed = JSON.parse(memstr);
-
-	var arr = [];
-
+	// Store JSON to array
 	for(var x in parsed){
-  		arr.push(parsed[x]);	
+  		init_arr.push(parsed[x]);	
 	}
 
-	post(arr);
+	init_arr.pop();
+	//post(init_arr);
 
-	outlet(0,arr)
+	// Read Temporal model
+	temporal_arr = [];
+	memstr = "";
+
+	var f = new File(path.concat(temporal_path),"read");
+	f.open();
+	if (f.isopen) {
+		while(f.position<f.eof) {
+			memstr+=f.readstring(maxchars);
+		}
+		f.close();
+	} else {
+		post("Error\n");
+	}
+	
+	var parsed = JSON.parse(memstr);
+	// Store JSON to array
+	for(var x in parsed){
+  		temporal_arr.push(parsed[x]);	
+	}
+
+	temporal_arr.pop();
+	temporal_arr.reshape(16,16);
+	//post(temporal_arr[0]);
+
+	// Read Interlocking model
+	interlocking_arr = [];
+	memstr = "";
+
+	var f = new File(path.concat(interlocking_path),"read");
+	f.open();
+	if (f.isopen) {
+		while(f.position<f.eof) {
+			memstr+=f.readstring(maxchars);
+		}
+		f.close();
+	} else {
+		post("Error\n");
+	}
+	
+	var parsed = JSON.parse(memstr);
+	// Store JSON to array
+	for(var x in parsed){
+  		interlocking_arr.push(parsed[x]);	
+	}
+
+	interlocking_arr.pop();
+	interlocking_arr.reshape(16,16);
+	//post(interlocking_arr[0]);
 
 }
 
 
+// Reshape function
+Array.prototype.reshape = function(rows, cols) {
+    var copy = this.slice(0); // Copy all elements.
+    this.length = 0; // Clear out existing array.
+
+    for (var r = 0; r < rows; r++) {
+        var row = [];
+        for (var c = 0; c < cols; c++) {
+            var i = r * cols + c;
+            if (i < copy.length) {
+                row.push(copy[i]);
+            } 
+        }
+        this.push(row);
+    }
+};
 
 
 
