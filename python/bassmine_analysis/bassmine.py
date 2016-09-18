@@ -28,7 +28,7 @@ def write2json(name, data, path='models/'):
 	:param path: path where the json file will be stored
 	:return:
 	"""
-	with open(name + '.json', 'w') as outfile:
+	with open(path + name + '.json', 'w') as outfile:
 		json.dump(data.tolist(), outfile)
 
 

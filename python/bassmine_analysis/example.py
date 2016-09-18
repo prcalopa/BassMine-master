@@ -16,10 +16,10 @@ print kick_patterns
 #b0, B = markov.buildMNHM(MM, target)
 
 # Export to json
-with open('test.json', 'w') as outfile:
-    json.dump(MM.get_initial().tolist(), outfile)
-with open('test2.json', 'w') as outfile:
-    json.dump(MM.get_temporal().tolist(), outfile)
+json_path = '../../models/'
+bassmine.write2json('initial', MM.get_initial(), json_path)
+bassmine.write2json('temporal', MM.get_temporal(), json_path)
+bassmine.write2json('interlocking', MM.get_interlocking(), json_path)
 
 # Export to pickle files
 bassmine.write2pickle('b0',MM.get_initial())
