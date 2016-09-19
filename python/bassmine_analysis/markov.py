@@ -86,7 +86,7 @@ class MarkovModel:
 
 
 
-"""
+
 def buildMNHM(markov_model, target):
 	b0 = copy.copy(markov_model.get_initial())
 	b = copy.copy(markov_model.get_temporal())
@@ -128,4 +128,90 @@ def buildMNHM(markov_model, target):
 			B.append(bn)
 
 	return b0, B
-"""
+
+def constrainMM(markov_model, target):
+	b0 = copy.copy(markov_model.get_initial())
+	b = copy.copy(markov_model.get_temporal())
+	inter = copy.copy(markov_model.get_interlocking())
+
+	# b and inter are converted to dictionaries {row>0 : (idx columns>0)}
+	# Domains
+	Dom_init = markov_tm_2dict(b0)
+	Dom_B = markov_tm_2dict(b)
+	Dom_I = markov_tm_2dict(inter)
+
+	print "Initial dict ", Dom_init
+	print "Temporal dict ", Dom_B
+	print "Interlocking dict ", Dom_I
+
+	target_setlist = []
+	for t in target:
+		target_setlist.append(Dom_I[t])
+	print target_setlist
+
+	# V store the domain of each step
+	V = []
+
+	filter_init = Dom_init.intersection(target_setlist[0])
+	print list(filter_init)
+	# Look for possible continuations of filter_init in Dom_B, constrained to target_list[1]
+	V.append(dict())
+	tmp = []
+	for f in filter_init:
+		print "Possible intital continuations",f, Dom_B[int(f)]
+		print "Kick constrain", target_setlist[1]
+		print "Intersection", Dom_B[int(f)].intersection(target_setlist[1])
+
+		if len(Dom_B[int(f)].intersection(target_setlist[1])) > 0:
+			V[0][int(f)] = Dom_B[int(f)].intersection(target_setlist[1])
+			tmp.append(f)
+
+
+		print "\n\n"
+	print "Kick constr", list(target_setlist[0])
+	print "V0", V[0].keys()
+	#print "V1", V[1].keys()	# Domain for step 1 / rows  of transition matrix
+	#print V[1]
+	# Create rest of V
+	for step in range(1, len(target)-1):
+		V.append(dict())
+		print "Kick constr", list(target_setlist[step])
+
+		for t in target_setlist[step]:
+			#print type(t)
+			if len(Dom_B[int(t)].intersection(target_setlist[step+1])):
+				V[step][int(t)] = Dom_B[int(t)].intersection(target_setlist[step+1])
+		#print "check\n"
+		print "V", step, V[step].keys()
+		# for each v in V[step] keep continuations that match interlocking with step+1
+
+
+
+def markov_tm_2dict(a):
+
+	out = dict()
+	key = 0
+
+	if len(a.shape) == 2:
+		for row in a:
+			value = 0
+			tmp_dom = []
+			if sum(row) > 0:
+				for col in row:
+					if col > 0:
+						tmp_dom.append(str(value))
+					value += 1
+				out[key] = set(tmp_dom)
+			key += 1
+		return out
+	elif len(a.shape) == 1:
+		tmp_dom = []
+		value = 0
+		for col in a:
+			if col > 0:
+				tmp_dom.append(str(value))
+			value += 1
+
+		return set(tmp_dom)
+	else:
+		print "Wrong size"
