@@ -181,7 +181,7 @@ def constrainMM(markov_model, target):
 			if len(Dom_B[int(t)].intersection(target_setlist[step+1])):
 				V[step][int(t)] =  Dom_B[int(t)].intersection(target_setlist[step+1])
 		#print "check\n"
-		print "V", step, V[step]
+		print "V", step, V[step].keys()
 
 	# Delete values from each key in V[i] that are not in V[i+1]
 	val_del = dict()
@@ -202,26 +202,58 @@ def constrainMM(markov_model, target):
 		val_del[step] = val_del_temp
 	print val_del
 
-	for key, value in val_del.iteritems():
-		if len(value)>0:
+	for step, value in val_del.iteritems():
+		if len(value) > 0:
 			for v in value:
-				V[key-1].pop(str(v), None)
+				# Delete key
+				print V[step-1].pop(v, None)
+			# Delete in previous continuations
+			print V[step-2]
+			for idx in V[step-2].keys():
+				V[step-2][idx] = set([str(x) for x in V[step-1].keys()]).intersection(V[step-2][idx])
 
-	print "\nFinal V:"
-	for i in range(len(V)):
 
-		print V[i]
+	print "\nFinal Model:"
+	out_Model = {}
+	init = []
+	init_dict = dict()
+	for key in V[0]:
+		init.append(b0[key])
+	init_dict['initial'] = dict()
+	init_dict['initial']['prob'] = list(init/sum(init))
+	init_dict['initial']['pattern'] = V[0].keys()
 
+	print init_dict
+
+
+
+	for i in range(len(V)-1):
+		out_Model[i] = {}
+		print "step:",i
+		for key,val in V[i].iteritems():
+			out_Model[i][key] = {}
+			print key # parent
+			print list(val) # child
+			tmp = [] # child
+			for v in val:
+				tmp.append(b[key, int(v)])
+			print list(tmp/sum(tmp))
+			out_Model[i][key]['pattern'] = [int(x) for x in val]
+			out_Model[i][key]['probs'] = list(tmp/sum(tmp))
+
+	print out_Model
 	# Merge all ditionaries
+	"""
 	Vdict = dict()
 	for l in range(len(V)-1):
+		print V[l]
 		Vdict[l] = V[l]
 """
 	# export to JSON
 	with open( 'V_test.json', 'w') as outfile:
-		json.dump(Vdict, outfile)
+		json.dump(out_Model, outfile)
 		outfile.close()
-"""
+
 
 
 def markov_tm_2dict(a):
