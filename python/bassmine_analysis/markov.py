@@ -1,6 +1,6 @@
 import numpy as np
 import copy
-
+import json
 
 def normalize(a):
 	c = 0
@@ -169,22 +169,59 @@ def constrainMM(markov_model, target):
 
 		print "\n\n"
 	print "Kick constr", list(target_setlist[0])
-	print "V0", V[0].keys()
+	print "V0", V[0]
 	#print "V1", V[1].keys()	# Domain for step 1 / rows  of transition matrix
 	#print V[1]
 	# Create rest of V
 	for step in range(1, len(target)-1):
 		V.append(dict())
-		print "Kick constr", list(target_setlist[step])
-
-		for t in target_setlist[step]:
-			#print type(t)
-			if len(Dom_B[int(t)].intersection(target_setlist[step+1])):
-				V[step][int(t)] = Dom_B[int(t)].intersection(target_setlist[step+1])
-		#print "check\n"
-		print "V", step, V[step].keys()
+		#print "Kick constr", list(target_setlist[step])
 		# for each v in V[step] keep continuations that match interlocking with step+1
+		for t in target_setlist[step]:
+			if len(Dom_B[int(t)].intersection(target_setlist[step+1])):
+				V[step][int(t)] =  Dom_B[int(t)].intersection(target_setlist[step+1])
+		#print "check\n"
+		print "V", step, V[step]
 
+	# Delete values from each key in V[i] that are not in V[i+1]
+	val_del = dict()
+
+
+	for step in range(1,len(target)-1):
+
+		val_del_temp = []
+		next_key = set([str(x) for x in V[step].keys()])
+		#print next_key
+		for key, value in V[step-1].iteritems():
+			#print key, value
+			tmp_int = value.intersection(next_key)
+			#if len(tmp_int) > 0:
+			V[step-1][key] = tmp_int
+			if len(tmp_int) == 0:
+				val_del_temp.append(key)
+		val_del[step] = val_del_temp
+	print val_del
+
+	for key, value in val_del.iteritems():
+		if len(value)>0:
+			for v in value:
+				V[key-1].pop(str(v), None)
+
+	print "\nFinal V:"
+	for i in range(len(V)):
+
+		print V[i]
+
+	# Merge all ditionaries
+	Vdict = dict()
+	for l in range(len(V)-1):
+		Vdict[l] = V[l]
+"""
+	# export to JSON
+	with open( 'V_test.json', 'w') as outfile:
+		json.dump(Vdict, outfile)
+		outfile.close()
+"""
 
 
 def markov_tm_2dict(a):
