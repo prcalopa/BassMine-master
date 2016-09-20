@@ -253,6 +253,9 @@ def constrainMM(markov_model, target):
 	with open( 'V_test.json', 'w') as outfile:
 		json.dump(out_Model, outfile)
 		outfile.close()
+	with open( 'V_test_init.json', 'w') as outfile:
+		json.dump(init_dict, outfile)
+		outfile.close()
 
 
 

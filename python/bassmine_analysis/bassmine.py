@@ -7,7 +7,7 @@ import pickle
 import json
 
 
-def write2pickle(name,data, path='models/'):
+def write2pickle(name,data, path='../../models/'):
 	#path = 'rhythmic_analysis/graph_models/pickle/'
 
 	with open(path + name + '.pickle', 'wb') as f:
