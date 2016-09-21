@@ -97,7 +97,7 @@ class build(pyext._class):
 
 	# number of inlets and outlets
 	_inlets=2
-	_outlets=0
+	_outlets=2
 
 
 	style = 0 # 0:BookaShade 1:MrScruff
@@ -238,7 +238,8 @@ class build(pyext._class):
 			json.dump(init_dict, outfile)
 			outfile.close()
 
-		print("Model build!")	
+		print("Model build!")
+		self._outlet(1,1)	
 
 
 def markov_tm_2dict(a):
