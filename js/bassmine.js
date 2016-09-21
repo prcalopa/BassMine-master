@@ -135,7 +135,7 @@ function import()
 		post();
 		post("TEST:");post(out_patt_id); post();
 	}
-	outlet(1,out_patt_id.toString())
+	outlet(1,out_patt_id)
 
 }
 

@@ -168,3 +168,42 @@ function bang()
   //clip.replaceSelectedNotes(notes);
   clip.replaceAllNotes(notes);
 } 
+
+
+
+function list()
+{
+
+  var pattern = arguments;
+  post("New Pattern");
+  post();
+  var d = new Dict("patterns");
+  //post(pattern);
+  //post(pattern.length);
+
+  // For each value in input create beat pattern
+  var pitch_ = 42;
+  var dur_ = 0.5;
+  var start_times = [];
+
+  for (var i = 0; i < pattern.length; i++) 
+  {
+    var patt_id = pattern[i];
+    var st_tmp = d.get("patterns").get(patt_id.toString());
+    
+    if(patt_id>0)
+    {
+      for(var j = 0; j<st_tmp.length; j++)
+      {
+        
+        start_times.push(st_tmp[j] + i); 
+          //post(st_tmp[j] + i)
+      } 
+      post(st_tmp);post();
+    }
+  }
+
+
+  post(start_times) 
+
+}
