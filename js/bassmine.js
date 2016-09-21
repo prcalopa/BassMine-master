@@ -1,4 +1,5 @@
 inlets = 1;
+outlets = 2;
 
 step = 0;
 
@@ -68,7 +69,8 @@ function import()
 	
 	//post("Names of existing dictionaries: " + names);
 	//post();	
-
+	var out_patt_id = [];
+	var tmp_id = 0;
 	// getkeys() will return an array of strings, each string being a key for our dict
 	var keys = d.getkeys();
 	
@@ -96,19 +98,44 @@ function import()
 	// If only one possible pattern avoid computing any sampling
 	if (i_prob.length > 1)
 	{
-		post(i_patt[random_sample(i_prob)])
+		tmp_id = i_patt[random_sample(i_prob)];
+		out_patt_id.push(tmp_id);
+		post(tmp_id);
 	}
 	else 
 	{
-		post(i_patt)
+		out_patt_id.push(i_patt);
+		post(i_patt);
 	}	
-	
+	post();
+	post("TEST:");post(out_patt_id); post();
 	// Random Walk routine
 	d = new Dict("model");
 
 	// Get from dictionary the pdf of last chosen pattern 
+	post(d.get("0").get(out_patt_id[0].toString()).get("pattern"));post();
+	post(d.get("0").get(out_patt_id[0].toString()).get("probs"));post();
 
-	//post(d.getkeys());
+	for( var i=0; i<d.getkeys().length; i++)
+	{
+		var prob = d.get(i.toString()).get(out_patt_id[i].toString()).get("probs")
+		var patt = d.get(i.toString()).get(out_patt_id[i].toString()).get("pattern")
+		//post(d.getkeys());
+		if (prob.length > 1)
+		{
+			tmp_id = patt[random_sample(prob)];
+			out_patt_id.push(tmp_id);
+			post(tmp_id);
+		}
+		else 
+		{
+			out_patt_id.push(patt);
+			post(i_patt);
+		}	
+		post();
+		post("TEST:");post(out_patt_id); post();
+	}
+	outlet(1,out_patt_id.toString())
 
 }
 
@@ -117,9 +144,9 @@ function bang()
 {
 	post("step:")
 	post(step)
-	
+
 	import();
-	post()
+	post();
 
 	step = step +1;
 	

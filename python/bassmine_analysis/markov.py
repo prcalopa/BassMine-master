@@ -213,6 +213,7 @@ def constrainMM(markov_model, target):
 				V[step-2][idx] = set([str(x) for x in V[step-1].keys()]).intersection(V[step-2][idx])
 
 
+	print len(V)
 	print "\nFinal Model:"
 	out_Model = {}
 	init = []
@@ -227,7 +228,7 @@ def constrainMM(markov_model, target):
 
 
 
-	for i in range(len(V)-1):
+	for i in range(len(V)):
 		out_Model[i] = {}
 		print "step:",i
 		for key,val in V[i].iteritems():
@@ -257,6 +258,7 @@ def constrainMM(markov_model, target):
 		json.dump(init_dict, outfile)
 		outfile.close()
 
+	print len(out_Model)
 
 
 def markov_tm_2dict(a):

@@ -216,7 +216,7 @@ class build(pyext._class):
 		init_dict['initial']['prob'] = list(init/sum(init))
 		init_dict['initial']['pattern'] = V[0].keys()
 		#print init_dict
-		for i in range(len(V)-1):
+		for i in range(len(V)):
 			out_Model[i] = {}
 			#print "step:",i
 			for key,val in V[i].iteritems():
