@@ -1,3 +1,9 @@
+inlets = 1;
+outlets = 1;
+autowatch = 1;
+
+
+
 function log() {
   for(var i=0,len=arguments.length; i<len; i++) {
     var message = arguments[i];
@@ -159,9 +165,16 @@ function bang()
   });
 
   var notes = [];
-  notes.push( new Note(60, 0, 1, 100, 0) );
-  notes.push( new Note(64, 1, 1, 100, 0) );
-  notes.push( new Note(67, 2, 1, 100, 0) );
+  
+  for (var i = 0; i < start_times.length; i++) 
+  {
+    notes.push( new Note(32, start_times[i], 0.25, 100, 0) );
+  }
+
+
+  //notes.push( new Note(60, 0, 1, 100, 0) );
+  //notes.push( new Note(64, 1, 1, 100, 0) );
+  //notes.push( new Note(67, 2, 1, 100, 0) );
  
   var clip = new Clip();
   //clip.setNotes(notes);
@@ -169,9 +182,9 @@ function bang()
   clip.replaceAllNotes(notes);
 } 
 
+var start_times;
 
-
-function list()
+function genPattern()
 {
 
   var pattern = arguments;
@@ -184,26 +197,37 @@ function list()
   // For each value in input create beat pattern
   var pitch_ = 42;
   var dur_ = 0.5;
-  var start_times = [];
+  start_times = [];
 
   for (var i = 0; i < pattern.length; i++) 
   {
-    var patt_id = pattern[i];
-    var st_tmp = d.get("patterns").get(patt_id.toString());
-    
-    if(patt_id>0)
-    {
-      for(var j = 0; j<st_tmp.length; j++)
-      {
-        
-        start_times.push(st_tmp[j] + i); 
-          //post(st_tmp[j] + i)
-      } 
-      post(st_tmp);post();
-    }
+    start_times.push(pattern[i]);
+  }  
+
+  post(start_times); 
+  outlet(0, start_times);
+
+  var clip = new Clip();
+  var notes = clip.getNotes();
+  var notes = clip.getSelectedNotes();  
+  notes.forEach(function(note){
+    log(note);
+  });
+
+  var notes = [];
+  
+  for (var i = 0; i < start_times.length; i++) 
+  {
+    notes.push( new Note(36, start_times[i], 0.25, 100, 0) );
   }
 
 
-  post(start_times) 
-
+  //notes.push( new Note(60, 0, 1, 100, 0) );
+  //notes.push( new Note(64, 1, 1, 100, 0) );
+  //notes.push( new Note(67, 2, 1, 100, 0) );
+ 
+  var clip = new Clip();
+  //clip.setNotes(notes);
+  //clip.replaceSelectedNotes(notes);
+  clip.replaceAllNotes(notes);
 }
