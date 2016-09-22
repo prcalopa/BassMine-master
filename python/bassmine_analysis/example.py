@@ -4,8 +4,12 @@ import json
 import csv
 import random
 
-bass_path = 'Bass'
-drum_path = 'Drums'
+style = {1: 'booka_shade', 2: 'mr_scruff'}
+
+style_id = 2
+
+bass_path = '../../corpus/' + style[style_id] + '/bass'
+drum_path = '../../corpus/' + style[style_id] + '/drums'
 
 # Analyse corpus and build Markov model
 MM, kick_patterns = bassmine.corpus_analysis(bass_path, drum_path)
@@ -20,17 +24,20 @@ target = [8,8,8,9,8,8,9,0]
 #b0, B = markov.buildMNHM(MM, target)
 markov.constrainMM(MM,target)
 
+
+_path = '../../models/' + style[style_id] + '/'
+
 """
 # Export to json
-json_path = '../../models/'
-bassmine.write2json('initial', MM.get_initial(), json_path)
-bassmine.write2json('temporal', MM.get_temporal(), json_path)
-bassmine.write2json('interlocking', MM.get_interlocking(), json_path)
+bassmine.write2json('initial', MM.get_initial(), _path)
+bassmine.write2json('temporal', MM.get_temporal(), _path)
+bassmine.write2json('interlocking', MM.get_interlocking(), _path)
 """
 # Export to pickle files
-bassmine.write2pickle('b0', MM.get_initial())
-bassmine.write2pickle('b', MM.get_temporal())
-bassmine.write2pickle('inter', MM.get_interlocking())
+bassmine.write2pickle('initial', MM.get_initial(),_path)
+bassmine.write2pickle('temporal', MM.get_temporal(),_path)
+bassmine.write2pickle('interlocking', MM.get_interlocking(),_path)
+
 """
 print "Filtered initial"
 print b0

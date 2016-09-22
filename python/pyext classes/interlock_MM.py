@@ -120,12 +120,16 @@ class build(pyext._class):
 		target = list(s)
 		####
 		# IMPLEMENT STYLE CHANGE
+		if int(f) == 0:
+			style_path = 'booka_shade/'
+		elif int(f) == 1:
+			style_path = 'mr_scruff/' 	
 		####
 		# Change path
-		path = "/Users/Pere/Github Repo/BassMine/BassMine-master/models/"
-		b0 = pickle.load( open(path + "b0.pickle", "rb") )
-		b = pickle.load( open(path + "b.pickle", "rb") )
-		inter = pickle.load( open(path + "inter.pickle", "rb") )
+		path = "/Users/Pere/Github Repo/BassMine/BassMine-master/models/" + style_path
+		b0 = pickle.load( open(path + "initial.pickle", "rb") )
+		b = pickle.load( open(path + "temporal.pickle", "rb") )
+		inter = pickle.load( open(path + "interlocking.pickle", "rb") )
 
 		## b and inter are converted to dictionaries {row>0 : (idx columns>0)}
 		## Domains

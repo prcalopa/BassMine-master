@@ -53,7 +53,8 @@ def quantize_pattern(pattern):
 		# quantize to the closest subdivision
 		i, d = divmod(o, 1)  # i = row(beat number) , d = column (beat subdivision)
 		d_ = (abs(subdiv_aux - d)).argmin()
-		rhythm[int(i), d_] = 1
+		if i < noBeats_bass:
+			rhythm[int(i), d_] = 1
 	return rhythm
 
 

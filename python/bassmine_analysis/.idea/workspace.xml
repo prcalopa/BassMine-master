@@ -2,8 +2,58 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="521b6053-e32b-40d1-bfa3-be772a549625" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../models/pattern_dict.json" afterPath="$PROJECT_DIR$/../../models/pattern_dict.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/create_pattern_dictionary.py" afterPath="$PROJECT_DIR$/create_pattern_dictionary.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Bad Love 126.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Body Lenguage 126.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_CHA! 120.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Charlotte 126.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Friend for a night 123.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_In white rooms 124.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_L.A. Tely 126.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Love Inc 1 123.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Love Inc 2 123.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Maifeld 122.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Many Rivers 124.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Night Falls 125.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Paper Moon 121.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Perfect Time 121.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Psychameleon 1 128.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_S.T.A.R.Z.Z 1 125.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_S.T.A.R.Z.Z 2 125.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_This is Not the Time 126.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Wildest Thing 122.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_double identity 124.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_something physical 1 124.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_something physical 2 124.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Bad Love 126.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Body Lenguage 126.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_CHA! 120.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Charlotte 126.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Friend for a night 123.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_In white rooms 124.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_L.A. Tely 126.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Love Inc 1 123.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Love Inc 2 123.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Maifeld 122.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Many Rivers 124.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Night Falls 125.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Paper Moon 121.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Perfect Time 121.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Psychameleon 1 128.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_S.T.A.R.Z.Z 1 125.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_S.T.A.R.Z.Z 2 125.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_This is Not the Time 126.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Wildest Thing 122.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_double identity 124.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_something physical 1 124.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_something physical 2 124.mid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/models/b.pickle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/models/b0.pickle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/models/inter.pickle" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/V_test.json" afterPath="$PROJECT_DIR$/V_test.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/V_test_init.json" afterPath="$PROJECT_DIR$/V_test_init.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bassmine.py" afterPath="$PROJECT_DIR$/bassmine.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example.py" afterPath="$PROJECT_DIR$/example.py" />
     </list>
     <ignored path="bassmine_analysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,16 +73,14 @@
     <favorites_list name="bassmine_analysis" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="example.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#917#1019#1" expanded="false" />
-                <element signature="e#1020#1156#1" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -51,10 +99,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_pattern_dictionary.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="create_pattern_dictionary.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/create_pattern_dictionary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5080214">
+            <state vertical-scroll-proportion="0.0">
               <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
               <folding />
             </state>
@@ -71,11 +119,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="V_test.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="V_test.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/V_test.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="4917" selection-start-line="0" selection-start-column="4917" selection-end-line="0" selection-end-column="4917" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="6088" selection-start-line="0" selection-start-column="6088" selection-end-line="0" selection-end-column="6088" />
               <folding />
             </state>
           </provider>
@@ -85,7 +133,7 @@
         <entry file="file://$PROJECT_DIR$/bassmine.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="32" selection-start-line="36" selection-start-column="4" selection-end-line="37" selection-end-column="32" />
+              <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -99,10 +147,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/example.py" />
-        <option value="$PROJECT_DIR$/bassmine.py" />
         <option value="$PROJECT_DIR$/markov.py" />
         <option value="$PROJECT_DIR$/create_pattern_dictionary.py" />
+        <option value="$PROJECT_DIR$/bassmine.py" />
+        <option value="$PROJECT_DIR$/example.py" />
       </list>
     </option>
   </component>
@@ -136,7 +184,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -155,30 +203,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bassmine_analysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bassmine_analysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.create_pattern_dictionary">
+  <component name="RunManager" selected="Python.example">
     <configuration default="false" name="example" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -341,8 +375,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.create_pattern_dictionary" />
-        <item index="1" class="java.lang.String" itemvalue="Python.example" />
+        <item index="0" class="java.lang.String" itemvalue="Python.example" />
+        <item index="1" class="java.lang.String" itemvalue="Python.create_pattern_dictionary" />
       </list>
     </recent_temporary>
   </component>
@@ -361,24 +395,24 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29850745" sideWeight="0.50277776" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26741293" sideWeight="0.49722221" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29850745" sideWeight="0.50277776" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23258707" sideWeight="0.49722221" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -398,34 +432,31 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/initial.csv">
+    <entry file="file://$PROJECT_DIR$/example.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interlocking.csv">
+    <entry file="file://$PROJECT_DIR$/markov.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="230" column="25" selection-start-line="230" selection-start-column="25" selection-end-line="230" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#2224#3119#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/temporal.csv">
+    <entry file="file://$PROJECT_DIR$/create_pattern_dictionary.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/V_test.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="4917" selection-start-line="0" selection-start-column="4917" selection-end-line="0" selection-end-column="4917" />
           <folding />
         </state>
       </provider>
@@ -438,15 +469,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example.py">
+    <entry file="file://$PROJECT_DIR$/V_test.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#917#1019#1" expanded="false" />
-            <element signature="e#1020#1156#1" expanded="false" />
-          </folding>
+          <caret line="0" column="4917" selection-start-line="0" selection-start-column="4917" selection-end-line="0" selection-end-column="4917" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bassmine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="32" selection-start-line="36" selection-start-column="4" selection-end-line="37" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/initial.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interlocking.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temporal.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create_pattern_dictionary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -464,15 +528,33 @@
     <entry file="file://$PROJECT_DIR$/bassmine.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="32" selection-start-line="36" selection-start-column="4" selection-end-line="37" selection-end-column="32" />
+          <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create_pattern_dictionary.py">
+    <entry file="file://$PROJECT_DIR$/example.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5080214">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/V_test_init.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/V_test.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="6088" selection-start-line="0" selection-start-column="6088" selection-end-line="0" selection-end-column="6088" />
           <folding />
         </state>
       </provider>
