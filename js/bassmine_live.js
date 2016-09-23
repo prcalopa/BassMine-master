@@ -3,8 +3,8 @@ outlets = 1;
 autowatch = 1;
 
 // Global variables for pitch generation
-//var _root_note = 0; // 
-//var _octave = 3;
+var _root_note = 0; // 
+var _octave = 3;
 
 function log() {
   for(var i=0,len=arguments.length; i<len; i++) {
@@ -195,20 +195,23 @@ function genPattern()
   
   for (var i = 0; i < note_clip.getkeys().length; i++) 
   {
+    //post("Que pasa??");
+    var tmp = note_clip.get(i.toString())
+    //post(tmp[1]);
     // Pitch should be determined
-    //_pitch = note_clip.get(i.toString);
-    //_start = note_clip.get(i.toString).indexOf(1);
-    //_dur = note_clip.get(i.toString).indexOf(2);
-    //_vel = note_clip.get(i.toString).indexOf(3);
+    _pitch = tmp[0] + _root_note + (12 * _octave);
+    _start = tmp[1];
+    _dur = tmp[2];
+    _vel = tmp[3];
 
-    post("Que pasa??");
-    ////notes.push( new Note(_pitch, _start, _dur, _vel, 0) );
+
+    notes.push( new Note(_pitch, _start, _dur, _vel, 0) );
   }
   
-  //var clip = new Clip();
+  var clip = new Clip();
   ////clip.setNotes(notes);
   ////clip.replaceSelectedNotes(notes);
-  //clip.replaceAllNotes(notes);
+  clip.replaceAllNotes(notes);
 }
 
 function new_clip()
