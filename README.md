@@ -1,5 +1,4 @@
 # BassMine-master
-BassMine repository
 
 Requeriments:
 
