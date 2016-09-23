@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 67.0, 79.0, 512.0, 649.0 ],
+		"rect" : [ 45.0, 79.0, 394.0, 534.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,33 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-33",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 183.5, 107.0, 71.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 80.5, 36.0, 71.0, 22.0 ],
+					"style" : "",
+					"text" : "newMelody"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-45",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 227.0, 26.0, 150.0, 20.0 ],
+					"style" : "",
+					"text" : "CREATE PATTERN"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-38",
 					"maxclass" : "newobj",
@@ -668,9 +695,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"outlinecolor" : [ 0.952941, 0.564706, 0.098039, 1.0 ],
-					"patching_rect" : [ 248.0, 25.0, 59.0, 59.0 ],
+					"patching_rect" : [ 248.0, 51.0, 33.0, 33.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 194.0, 306.0, 290.0, 290.0 ],
+					"presentation_rect" : [ 21.0, 10.0, 48.0, 48.0 ],
 					"style" : ""
 				}
 
@@ -684,7 +711,7 @@
 					"outlettype" : [ "", "", "", "", "" ],
 					"patching_rect" : [ 248.0, 153.0, 74.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "bassmine",
+						"filename" : "bassmine.js",
 						"parameter_enable" : 0
 					}
 ,
@@ -1085,6 +1112,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-32", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-28", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-33", 0 ]
 				}
 
 			}

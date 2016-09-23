@@ -63,15 +63,15 @@ print(pitch_temporal_model)
 
 ## TEmporal model
 for key,val in pitch_temporal_model.iteritems():
-			pitch_dict[key] = {}
+			pitch_dict[key-12] = {}
 			print key # parent
 			print list(val) # child
 			tmp = [] # child
 			for v in val:
 				tmp.append(pitch_model.get_temporal()[key, int(v)])
 			print list(tmp/sum(tmp))
-			pitch_dict[key]['interval'] = [int(x) for x in val]
-			pitch_dict[key]['probs'] = list(tmp/sum(tmp))
+			pitch_dict[key-12]['interval'] = [int(x)-12 for x in val]
+			pitch_dict[key-12]['probs'] = list(tmp/sum(tmp))
 
 print "YYYYYYYYY", pitch_dict
 

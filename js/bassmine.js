@@ -113,22 +113,28 @@ function genPitchContour()
 	var init_pitch = 0;
 	out_pitch_contour.push(init_pitch);
 	var tmp_id;
-	var aux = init_pitch + 12;
+	var aux = init_pitch;
 	for( var i=0; i<start_times.length; i++)
 	{
+		//post(pitch_dict.getkeys());
 		var prob = pitch_dict.get(aux.toString()).get("probs");
 		var intervals = pitch_dict.get(aux.toString()).get("interval");
 		//post(d.getkeys());
 		if (prob.length > 1)
 		{
+			// Sort probs in descending order
+			//post(sortWithIndeces(intervals));post();
+			//post(sortWithIndeces(intervals).sortIndices);post();
+			//sort_idxs = sort_probs.sortIndices;
+			//////
 			tmp_id = intervals[random_sample(prob)];
-			out_pitch_contour.push(tmp_id -12);
+			out_pitch_contour.push(tmp_id );
 			aux = tmp_id;
 			//post(tmp_id);
 		}
 		else 
 		{
-			out_pitch_contour.push(intervals -12);
+			out_pitch_contour.push(intervals);
 			aux = intervals;
 			//post(i_patt);
 		}	
@@ -295,3 +301,15 @@ function bang()
 	// x.clear();
 	
 }
+
+// function for generate new melody; same start times
+
+function newMelody()
+{
+	genPitchContour();
+	genBassline();
+	writeNotesDict();
+}
+
+
+

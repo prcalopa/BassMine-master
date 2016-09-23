@@ -2,6 +2,12 @@ inlets = 1;
 outlets = 1;
 autowatch = 1;
 
+//Globals
+var drum_track_id = 1;
+var chord_track_id = 2;
+var bass_track_id = 0; // to do : set dinamycally
+
+
 // Global variables for pitch generation
 var _root_note = 0; // 
 var _octave = 3;
@@ -32,13 +38,22 @@ log("Reload:", new Date);
 //--------------------------------------------------------------------
 // Clip class
  
-function Clip() {
-  var path = "live_set view highlighted_clip_slot clip";
+function Clip(p) {
+  //var path = "live_set view highlighted_clip_slot clip";
+  var path = p;
   this.liveObject = new LiveAPI(path);
 }
   
 Clip.prototype.getLength = function() {
   return this.liveObject.get('length');
+}
+
+Clip.prototype.getTrack = function() {
+  return this.liveObject.path.split(" ")[2];
+}
+
+Clip.prototype.getSlot = function() {
+  return this.liveObject.path.split(" ")[4];
 }
 
 Clip.prototype._parseNoteData = function(data) {
@@ -180,8 +195,8 @@ Note.prototype.getMuted = function() {
 function genPattern()
 {
   
-  post("New Pattern");
-  post();
+  //post("New Pattern");
+  //post();
   
   var note_clip = new Dict("clip_notes_live");
   note_clip.import_json("notes.json");
@@ -208,10 +223,17 @@ function genPattern()
     notes.push( new Note(_pitch, _start, _dur, _vel, 0) );
   }
   
-  var clip = new Clip();
+  var clip = new Clip("live_set view highlighted_clip_slot clip");
+  post(clip.getTrack());post();
+  post(clip.getSlot());post();
   ////clip.setNotes(notes);
   ////clip.replaceSelectedNotes(notes);
-  clip.replaceAllNotes(notes);
+  if(clip.getTrack() == bass_track_id)
+  {
+    post("New Bassline");post();
+    clip.replaceAllNotes(notes);
+  }
+
 }
 
 function new_clip()
@@ -223,10 +245,43 @@ function new_clip()
 
 function readClip()
 {
-  var clip = new Clip();
+  var clip = new Clip("live_set view highlighted_clip_slot clip");
   var notes = clip.getNotes();
   var notes = clip.getSelectedNotes();  
   notes.forEach(function(note){
     log(note);
   });
+
+  if (clip.getTrack() == drum_track_id)
+  {
+    post("drums");post();
+  }
+  else if(clip.getTrack() == chord_track_id)
+  {
+    post("chords");post();
+  }
+  else if(clip.getTrack() == bass_track_id)
+  {
+    post("bass");post();
+  }
+  else
+  {
+    post("not determined");post();
+  }
+
+
 }
+
+//Update globals
+function set_drum_track()
+{
+  drum_track_id = arguments[0] - 1;
+  //post(drum_track_id);post();  
+}
+
+function set_chord_track()
+{
+  chord_track_id = arguments[0] - 1;
+  //post(chord_track_id);post();  
+}
+
