@@ -4,39 +4,21 @@ import numpy as np
 import utility_functions as uf
 import markov
 import pickle
-import json
-import matplotlib.pyplot as plt
 
 
 def write2pickle(name,data, path='../../models/'):
+	"""
+	Export numpy array to pickle
+	:param name: filename
+	:param data: allowed pickle data
+	:param path: output folder
+	:return:
+	"""
 	#path = 'rhythmic_analysis/graph_models/pickle/'
 
 	with open(path + name + '.pickle', 'wb') as f:
 		# Pickle the 'data' dictionary using the highest protocol available.
 		pickle.dump(data, f, pickle.HIGHEST_PROTOCOL)
-
-
-def write2json(name, data, path='models/'):
-	"""
-	Write numpy array to json file
-	:param name: name of the file
-	:param data: array to encode
-	:param path: path where the json file will be stored
-	:return:
-	"""
-	tmp = []
-
-	# reshape nd-arrays
-	if len(data.shape) > 1:
-		data = data.reshape((data.shape[0] * data.shape[1], 1))
-		for d in data:
-			tmp.append(float(d))
-		data = tmp
-	elif len(data.shape) == 1:
-		data = data.tolist()
-
-	with open(path + name + '.json', 'w') as outfile:
-		json.dump(data, outfile)
 
 
 def quantize_pattern(pattern):
@@ -91,7 +73,7 @@ def corpus_analysis(bass_path, drum_path):
 	file_it = 0
 
 	# Markov analysis test
-	model = markov.MarkovModel(16)
+	rhythm_model = markov.MarkovModel(16)
 	kick_patterns = []
 
 	# Pitch Model
@@ -121,7 +103,7 @@ def corpus_analysis(bass_path, drum_path):
 		bass_rhythm = quantize_pattern(onset_bass)
 		#print(bass_rhythm)
 		bass_id = translate_rhythm(bass_rhythm)
-		model.add_temporal(bass_id)
+		rhythm_model.add_temporal(bass_id)
 
 		pitch_model.add_temporal(pitch_contours[f])
 		# Read Drum files
@@ -142,19 +124,10 @@ def corpus_analysis(bass_path, drum_path):
 		kick_id = translate_rhythm(kick_rhythm)
 		kick_patterns.append(kick_id)
 		# Update interlocking model
-		model.add_interlocking(kick_id, bass_id)
+		rhythm_model.add_interlocking(kick_id, bass_id)
 
+		# Update file counter
 		file_it += 1
-		## Visualize pitch contours
 
-
-		#plt.plot(pitch_contours[f],'*')
-		#plt.ylabel('some numbers')
-		#plt.show()
-
-
-
-
-
-	return model, kick_patterns, pitch_model
+	return rhythm_model, kick_patterns, pitch_model
 

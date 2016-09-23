@@ -3,6 +3,11 @@ import copy
 import json
 
 def normalize(a):
+	"""
+	Normalize matrix by rows
+	:param a: matrix
+	:return: normalized matrix
+	"""
 	c = 0
 	for row in a:
 		factor = sum(row)
@@ -13,12 +18,28 @@ def normalize(a):
 
 
 def indices(a, func):
-	# UF.indices(tmp_sv, lambda x: x <= target_sv[i])
+	"""
+	Return indices in an array matching to a given function
+	EX: indices(array, lambda x: x <= 1)
+	:param a: array, list
+	:param func: lambda function
+	:return: indices matching lambda function
+	"""
+	# UF.
 	return [i for (i, val) in enumerate(a) if func(val)]
 
 
 class MarkovModel:
+	"""
+	Class to operate with markov models
+	"""
 	def __init__(self, model_size, order=1):
+		"""
+		Constructor
+		:param model_size: Dictionary size of the model
+		:param order: default = 1 (not implemented)
+		:return: instance of MarkovModel
+		"""
 		if type(model_size) == tuple:
 			if len(model_size) == 2:
 				self.model_size = model_size
@@ -43,6 +64,14 @@ class MarkovModel:
 		self.interlocking_model = []
 
 	def add_temporal(self, pattern):
+		"""
+		Create markov transition matrix given a sequence
+
+		First element counts are stored in self.initial_model
+		Rest of elements feed the transition matrix (no time-series)
+
+		:param pattern: list or array with idx of the state dictionary
+		"""
 		count = 0
 		for p in pattern:
 			if count == 0:
@@ -54,6 +83,12 @@ class MarkovModel:
 			count += 1
 
 	def add_interlocking(self, patt_kick, patt_bass):
+		"""
+		Create interlocking markov matrix given two sequences
+
+		:param patt_kick: kick drum pattern (anchor)
+		:param patt_bass: bassline pattern
+		"""
 
 		l = min(len(patt_kick), len(patt_bass))
 
@@ -61,75 +96,99 @@ class MarkovModel:
 			self.update_interlocking(patt_kick[i], patt_bass[i])
 
 	def update_interlocking(self, x, y):
+		"""
+		internal function to update interlocking matrix
+		:param x: row (anchor)
+		:param y: col (bass)
+		"""
 		self.support_interlocking[int(x), int(y)] += 1.
 
 	def update_temporal(self, x, y):
+		"""
+		internal function to update temporal matrix
+		:param x: row (past)
+		:param y: col (present)
+		"""
 		self.support_temporal[int(x), int(y)] += 1.
 
 	def update_initial(self, x):
+		"""
+		internal function to update initial probabilites
+		:param x: row (probabilities)
+		"""
 		self.support_initial[int(x)] += 1.
 
 	def normalize_model(self):
-
+		"""
+		Normalize matrices
+		"""
 		self.initial_model = self.support_initial / sum(self.support_initial)
 		self.temporal_model = normalize(self.support_temporal)
 		self.interlocking_model = normalize(self.support_interlocking)
+		self.normalized = True
 
 	def get_initial(self):
+		"""
+		Get initial probabilites
+		:return: list
+		"""
 		return self.initial_model
 
 	def get_temporal(self):
+		"""
+		Get temporal model
+		:return: matrix[][]
+		"""
 		return self.temporal_model
 
 	def get_interlocking(self):
+		"""
+		Get interlocking model
+		:return:
+		"""
 		return self.interlocking_model
 
+	def pitch_model(self):
+		"""
+		Build pitch model
 
+		work in progress...
 
+		Takes first not an assume it as root note. Other notes are represented as intervals relative to root (first note)
 
-def buildMNHM(markov_model, target):
-	b0 = copy.copy(markov_model.get_initial())
-	b = copy.copy(markov_model.get_temporal())
-	inter = copy.copy(markov_model.get_interlocking())
+		:return: dictionary{0: {'interval': , 'probs'}, {},{},...}
+		"""
+		pitch_temporal_model = markov_tm_2dict(self.get_temporal())
+		pitch_dict = dict()
+		#print(pitch_temporal_model)
+		## Temporal model
+		for key,val in pitch_temporal_model.iteritems():
+			pitch_dict[key-12] = {}
+			print key # parent
+			print list(val) # child
+			tmp = [] # child
+			for v in val:
+				tmp.append(self.get_temporal()[key, int(v)])
+			print list(tmp/sum(tmp))
+			pitch_dict[key-12]['interval'] = [int(x)-12 for x in val]
+			pitch_dict[key-12]['probs'] = list(tmp/sum(tmp))
 
-	i = []
-	# Iterate beat-by-beat to create NHMM
-	B = []
+		print "Pitch model computed\n", pitch_dict
+		return pitch_dict
 
-	for t in range(len(target)):
-
-		if t == 0:
-			const_d = indices(inter[target[t]], lambda x: x == 0)
-			init_const = indices(b0, lambda x: x == 0)
-			if len(init_const) > 0:
-				for ic in init_const:
-					const_d.append(ic)
-			for c in const_d:
-				b0[c] = 0.
-			#print b0
-
-		else:
-			bn = np.matrix(b)
-			# Propagate constraint from previous iteration
-			# delete rows
-			for c in const_d:
-				bn[c, :] = 0.
-
-			# Interlocking contraint
-			prop_const = indices(inter[target[t]], lambda x: x == 0)
-			# delete columns
-			for p in prop_const:
-				bn[:, p] = 0.
-
-			# Update propagation constraint to next iteration
-			const_d = prop_const
-			#print const_d
-			#print bn
-			B.append(bn)
-
-	return b0, B
 
 def constrainMM(markov_model, target):
+	"""
+
+	Compute non-homogeneuous markov model based on interlocking constraint
+
+	This function is also implemented as a pyext class.
+
+	:param markov_model: MarkovModel instance
+	:param target: Target pattern for interlocking (kick) represented by its pattern ids.
+
+	"""
+
 	b0 = copy.copy(markov_model.get_initial())
 	b = copy.copy(markov_model.get_temporal())
 	inter = copy.copy(markov_model.get_interlocking())
@@ -262,7 +321,14 @@ def constrainMM(markov_model, target):
 
 
 def markov_tm_2dict(a):
+	"""
+	Convert markov transition matrix to dictionary of sets.
+	Compact representation to avoid sparse matrices and better performance in the constrain model
 
+	:param a: MarkovModel temporal/interlocking/pitch matrix
+
+	:return dictionary
+	"""
 	out = dict()
 	key = 0
 
