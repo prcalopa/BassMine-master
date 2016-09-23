@@ -22,6 +22,13 @@ def write2pickle(name,data, path='../../models/'):
 
 
 def quantize_pattern(pattern):
+	"""
+	Quantize array of note start times to 1/16 bar resolution
+	Loop lengthn is quantized to multiples of whole bars
+
+	:param pattern: array of start times in beats
+	:return: array of binary onsets
+	"""
 	RES = 4
 
 	noBeats_bass = uf.numberOfBeats(pattern)  # Bass files length set the global length of analysis
@@ -42,7 +49,12 @@ def quantize_pattern(pattern):
 
 
 def translate_rhythm(rhythm):
+	"""
+	Translate binary rhythm to markov variables dictionary
 
+	:param rhythm: array of binary onsets.(output of quantize_pattern())
+	:return: array of beat pattern ids
+	"""
 	id = []
 
 	for beat in rhythm:
@@ -51,6 +63,15 @@ def translate_rhythm(rhythm):
 
 
 def corpus_analysis(bass_path, drum_path):
+	"""
+	Compute rhtyhmic model (temporal + interlocking)  and pitch model (intervals)
+
+	Input files must match their names : i.e. bass_[trackname].mid , drums_[trackname].mid
+
+	:param bass_path: folder with bass midi files
+	:param drum_path: folder with drums midi files
+	:return: rhythmic and pitch Markov Models , Kick patterns
+	"""
 
 	bass_files = madmom.utils.search_files(bass_path, '.mid')
 	drum_files = madmom.utils.search_files(drum_path, '.mid')
