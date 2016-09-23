@@ -189,7 +189,7 @@ Note.prototype.getMuted = function() {
   //}
 
 
-  
+
 //}
 
 function genPattern()
@@ -246,15 +246,17 @@ function new_clip()
 function readClip()
 {
   var clip = new Clip("live_set view highlighted_clip_slot clip");
-  var notes = clip.getNotes();
-  var notes = clip.getSelectedNotes();  
-  notes.forEach(function(note){
-    log(note);
-  });
+  var notes_all = clip.getNotes();
+  //var notes = clip.getSelectedNotes();  
 
   if (clip.getTrack() == drum_track_id)
   {
     post("drums");post();
+    //  Only kick notes
+    var kick = format_kick_pattern(notes_all);
+    //post(kick);post();
+    outlet(0,kick);
+
   }
   else if(clip.getTrack() == chord_track_id)
   {
@@ -264,12 +266,35 @@ function readClip()
   {
     post("bass");post();
   }
-  else
-  {
-    post("not determined");post();
-  }
+  //else
+  //{
+  //  post("not determined");post();
+  //}
 
 
+}
+
+//parse drums
+var kick_note = 36; // default value of 909 & 808 Live clips
+
+function format_kick_pattern(notes)
+{
+  var kick_onsets = [];
+
+  notes.forEach(function(note){
+    //log(note);
+    if(note.pitch == kick_note)
+    {
+      kick_onsets.push(note.start);
+    }
+  });
+
+  return kick_onsets;
+}
+
+function set_kick_note()
+{
+  drum_track_id = arguments[0];
 }
 
 //Update globals
