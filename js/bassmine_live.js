@@ -2,7 +2,9 @@ inlets = 1;
 outlets = 1;
 autowatch = 1;
 
-
+// Global variables for pitch generation
+//var _root_note = 0; // 
+//var _octave = 3;
 
 function log() {
   for(var i=0,len=arguments.length; i<len; i++) {
@@ -155,79 +157,73 @@ Note.prototype.getMuted = function() {
 }
 
 //--------------------------------------------------------------------
-function bang()
-{    
-  var clip = new Clip();
-  var notes = clip.getNotes();
-  var notes = clip.getSelectedNotes();  
-  notes.forEach(function(note){
-    log(note);
-  });
+//function bang()
+//{    
+//  var clip = new Clip();
+//  var notes = clip.getNotes();
+//  var notes = clip.getSelectedNotes();  
+//  notes.forEach(function(note){
+//    log(note);
+//  });
 
-  var notes = [];
   
-  for (var i = 0; i < start_times.length; i++) 
-  {
-    notes.push( new Note(32, start_times[i], 0.25, 100, 0) );
-  }
+  
+  //for (var i = 0; i < notes.length; i++) 
+  //{
+    //notes.push( new Note(32, start_times[i], 0.25, 100, 0) );
+  //}
 
 
-  //notes.push( new Note(60, 0, 1, 100, 0) );
-  //notes.push( new Note(64, 1, 1, 100, 0) );
-  //notes.push( new Note(67, 2, 1, 100, 0) );
- 
-  var clip = new Clip();
-  //clip.setNotes(notes);
-  //clip.replaceSelectedNotes(notes);
-  clip.replaceAllNotes(notes);
-} 
-
-var start_times;
+  
+//}
 
 function genPattern()
 {
-
-  var pattern = arguments;
+  
   post("New Pattern");
   post();
-  var d = new Dict("patterns");
-  //post(pattern);
-  //post(pattern.length);
+  
+  var note_clip = new Dict("clip_notes_live");
+  note_clip.import_json("notes.json");
+  var notes = [];
+  
+  var _pitch;
+  var _start;
+  var _dur;
+  var _vel;
 
-  // For each value in input create beat pattern
-  var pitch_ = 42;
-  var dur_ = 0.5;
-  start_times = [];
-
-  for (var i = 0; i < pattern.length; i++) 
+  
+  for (var i = 0; i < note_clip.getkeys().length; i++) 
   {
-    start_times.push(pattern[i]);
-  }  
+    // Pitch should be determined
+    //_pitch = note_clip.get(i.toString);
+    //_start = note_clip.get(i.toString).indexOf(1);
+    //_dur = note_clip.get(i.toString).indexOf(2);
+    //_vel = note_clip.get(i.toString).indexOf(3);
 
-  post(start_times); 
-  outlet(0, start_times);
+    post("Que pasa??");
+    ////notes.push( new Note(_pitch, _start, _dur, _vel, 0) );
+  }
+  
+  //var clip = new Clip();
+  ////clip.setNotes(notes);
+  ////clip.replaceSelectedNotes(notes);
+  //clip.replaceAllNotes(notes);
+}
 
+function new_clip()
+{
+  // CREATE NEW PATTERN
+  post("HEYYYYYYY");
+  genPattern();
+}
+
+function readClip()
+{
   var clip = new Clip();
   var notes = clip.getNotes();
   var notes = clip.getSelectedNotes();  
   notes.forEach(function(note){
     log(note);
   });
-
-  var notes = [];
-  
-  for (var i = 0; i < start_times.length; i++) 
-  {
-    notes.push( new Note(36, start_times[i], 0.25, 100, 0) );
-  }
-
-
-  //notes.push( new Note(60, 0, 1, 100, 0) );
-  //notes.push( new Note(64, 1, 1, 100, 0) );
-  //notes.push( new Note(67, 2, 1, 100, 0) );
- 
-  var clip = new Clip();
-  //clip.setNotes(notes);
-  //clip.replaceSelectedNotes(notes);
-  clip.replaceAllNotes(notes);
 }

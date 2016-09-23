@@ -5,6 +5,7 @@ import utility_functions as uf
 import markov
 import pickle
 import json
+import matplotlib.pyplot as plt
 
 
 def write2pickle(name,data, path='../../models/'):
@@ -93,6 +94,9 @@ def corpus_analysis(bass_path, drum_path):
 	model = markov.MarkovModel(16)
 	kick_patterns = []
 
+	# Pitch Model
+	pitch_model = markov.MarkovModel(25);
+	pitch_contours = []
 	# LOOP THROUGH THE DIFFERENT MIDI INSTANCES
 	for f in range(len(drum_files)):
 		# for f in range(0,2):
@@ -109,11 +113,17 @@ def corpus_analysis(bass_path, drum_path):
 		bass_midi = madmom.utils.midi.MIDIFile.from_file(bass_files[f])
 		bass_midi.note_time_unit = 'b'
 		onset_bass = bass_midi.notes[:, 0]
+		print bass_midi.notes[:,1] - bass_midi.notes[0,1] + 12
+		# Pitch Contour
+		pitch_contours.append(bass_midi.notes[:,1] - bass_midi.notes[0,1])
+
+		# Quantize rhythm
 		bass_rhythm = quantize_pattern(onset_bass)
-		print(bass_rhythm)
+		#print(bass_rhythm)
 		bass_id = translate_rhythm(bass_rhythm)
 		model.add_temporal(bass_id)
 
+		pitch_model.add_temporal(pitch_contours[f])
 		# Read Drum files
 		#
 		drum_midi = madmom.utils.midi.MIDIFile.from_file(match_file)
@@ -127,7 +137,7 @@ def corpus_analysis(bass_path, drum_path):
 				onset_kick.append(event[0])
 		# Quantize
 		kick_rhythm = quantize_pattern(onset_kick)
-		print kick_rhythm
+		#print kick_rhythm
 		# Translate
 		kick_id = translate_rhythm(kick_rhythm)
 		kick_patterns.append(kick_id)
@@ -135,6 +145,16 @@ def corpus_analysis(bass_path, drum_path):
 		model.add_interlocking(kick_id, bass_id)
 
 		file_it += 1
+		## Visualize pitch contours
 
-	return model, kick_patterns
+
+		#plt.plot(pitch_contours[f],'*')
+		#plt.ylabel('some numbers')
+		#plt.show()
+
+
+
+
+
+	return model, kick_patterns, pitch_model
 

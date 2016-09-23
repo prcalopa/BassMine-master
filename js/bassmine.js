@@ -1,5 +1,5 @@
 inlets = 1;
-outlets = 3;
+outlets = 5;
 
 step = 0;
 
@@ -7,6 +7,47 @@ autowatch = 1;
 
 var start_times;
 var out_patt_id;
+var out_pitch_contour;
+
+var notesDict = new Dict("clip_notes");
+// Global variables for pitch generation
+var _root_note = 0; // 
+var _octave = 3;
+
+
+function clearNoteDict(){
+
+	post(notesDict.name);post();
+	// Structure notesDict.set('note_idx').set('start/pitch....')
+	notesDict.clear();
+
+	for (var i = 0; i < start_times.length; i++) 
+	{
+		notesDict.set(i.toString());
+
+		//notesDict.set(i.toString().concat("::start"));
+		//notesDict.set(i.toString().concat("::start"),start_times[i]);
+		//notesDict.set(i.toString().concat("::picth"), out_pitch_contour[i]);
+	}	
+}
+
+function writeNotesDict()
+{
+
+	clearNoteDict();
+	// Get dictionary to write in
+	var duration = 0.25;
+	var velocity = 100;
+	
+	for (var i = 0; i < start_times.length; i++) 
+	{
+		notesDict.replace(i.toString(),out_pitch_contour[i],start_times[i],duration,velocity);
+	}
+	notesDict.export_json("notes.json");	
+
+	outlet(4, "new_clip");
+
+}
 
 
 function post_info(dictname, keys)
@@ -64,11 +105,43 @@ function random_sample(probs)
 	}
 }
 
+function genPitchContour()
+{
+	out_pitch_contour = [];
+	var pitch_dict = new Dict("pitch_contour");
+	// Initial probabilities
+	var init_pitch = 0;
+	out_pitch_contour.push(init_pitch);
+	var tmp_id;
+	var aux = init_pitch + 12;
+	for( var i=0; i<start_times.length; i++)
+	{
+		var prob = pitch_dict.get(aux.toString()).get("probs");
+		var intervals = pitch_dict.get(aux.toString()).get("interval");
+		//post(d.getkeys());
+		if (prob.length > 1)
+		{
+			tmp_id = intervals[random_sample(prob)];
+			out_pitch_contour.push(tmp_id -12);
+			aux = tmp_id;
+			//post(tmp_id);
+		}
+		else 
+		{
+			out_pitch_contour.push(intervals -12);
+			aux = intervals;
+			//post(i_patt);
+		}	
+		//post();
+		////post("TEST:");post(out_patt_id); post();
+	}
+	outlet(3,out_pitch_contour);
 
+}
 
 var step;
 
-function genPattern()
+function genBassline()
 {
   step = 0; 		
   var pattern = out_patt_id;
@@ -79,8 +152,6 @@ function genPattern()
   //post(pattern.length);
 
   // For each value in input create beat pattern
-  var pitch_ = 42;
-  var dur_ = 0.5;
   start_times = [];
   var tmp;
 
@@ -114,6 +185,9 @@ function genPattern()
     step++;
   }
 
+  // CREATE PITCH CONTOUR
+  // gen pitch contour
+  genPitchContour();
 
   //post(start_times);post(); 
   outlet(2, start_times);
@@ -209,7 +283,8 @@ function bang()
 
 	createPattern();
 	post();
-	genPattern()
+	genBassline();
+	writeNotesDict();
 
 	//step = step +1;
 	

@@ -2,58 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="521b6053-e32b-40d1-bfa3-be772a549625" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Bad Love 126.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Body Lenguage 126.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_CHA! 120.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Charlotte 126.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Friend for a night 123.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_In white rooms 124.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_L.A. Tely 126.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Love Inc 1 123.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Love Inc 2 123.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Maifeld 122.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Many Rivers 124.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Night Falls 125.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Paper Moon 121.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Perfect Time 121.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Psychameleon 1 128.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_S.T.A.R.Z.Z 1 125.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_S.T.A.R.Z.Z 2 125.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_This is Not the Time 126.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_Wildest Thing 122.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_double identity 124.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_something physical 1 124.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bass/bass_something physical 2 124.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Bad Love 126.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Body Lenguage 126.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_CHA! 120.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Charlotte 126.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Friend for a night 123.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_In white rooms 124.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_L.A. Tely 126.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Love Inc 1 123.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Love Inc 2 123.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Maifeld 122.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Many Rivers 124.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Night Falls 125.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Paper Moon 121.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Perfect Time 121.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Psychameleon 1 128.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_S.T.A.R.Z.Z 1 125.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_S.T.A.R.Z.Z 2 125.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_This is Not the Time 126.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_Wildest Thing 122.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_double identity 124.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_something physical 1 124.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Drums/drums_something physical 2 124.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/b.pickle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/b0.pickle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/inter.pickle" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/V_test.json" afterPath="$PROJECT_DIR$/V_test.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/V_test_init.json" afterPath="$PROJECT_DIR$/V_test_init.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Bassmine-M4L.amxd" afterPath="$PROJECT_DIR$/../../Bassmine-M4L.amxd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Bassmine_app.maxpat" afterPath="$PROJECT_DIR$/../../Bassmine_app.maxpat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../js/bassmine_live.js" afterPath="$PROJECT_DIR$/../../js/bassmine_live.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bassmine.py" afterPath="$PROJECT_DIR$/bassmine.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example.py" afterPath="$PROJECT_DIR$/example.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/markov.py" afterPath="$PROJECT_DIR$/markov.py" />
     </list>
     <ignored path="bassmine_analysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="example.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="example.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state vertical-scroll-proportion="-1.477314">
+              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -90,10 +44,11 @@
         <entry file="file://$PROJECT_DIR$/markov.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="230" column="25" selection-start-line="230" selection-start-column="25" selection-end-line="230" selection-end-column="25" />
+              <caret line="224" column="49" selection-start-line="220" selection-start-column="4" selection-end-line="224" selection-end-column="49" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#2224#3119#0" expanded="false" />
+                <element signature="e#2249#3144#0" expanded="false" />
+                <element signature="e#6703#7131#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -119,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="V_test.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="V_test.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/V_test.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="6088" selection-start-line="0" selection-start-column="6088" selection-end-line="0" selection-end-column="6088" />
               <folding />
             </state>
@@ -133,8 +88,13 @@
         <entry file="file://$PROJECT_DIR$/bassmine.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
-              <folding />
+              <caret line="98" column="23" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="23" />
+              <folding>
+                <element signature="e#31#44#0" expanded="true" />
+                <element signature="e#221#437#0" expanded="false" />
+                <element signature="e#984#1629#0" expanded="false" />
+                <element signature="e#1664#1773#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -147,8 +107,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/markov.py" />
         <option value="$PROJECT_DIR$/create_pattern_dictionary.py" />
+        <option value="$PROJECT_DIR$/markov.py" />
         <option value="$PROJECT_DIR$/bassmine.py" />
         <option value="$PROJECT_DIR$/example.py" />
       </list>
@@ -397,12 +357,12 @@
     <frame x="0" y="23" width="1440" height="873" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29850745" sideWeight="0.50277776" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23258707" sideWeight="0.49722221" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27985075" sideWeight="0.49722221" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -448,7 +408,8 @@
           <caret line="230" column="25" selection-start-line="230" selection-start-column="25" selection-end-line="230" selection-end-column="25" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#2224#3119#0" expanded="false" />
+            <element signature="e#2249#3144#0" expanded="false" />
+            <element signature="e#6703#7131#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -481,7 +442,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="32" selection-start-line="36" selection-start-column="4" selection-end-line="37" selection-end-column="32" />
-          <folding />
+          <folding>
+            <element signature="e#31#44#0" expanded="true" />
+            <element signature="e#221#437#0" expanded="false" />
+            <element signature="e#984#1629#0" expanded="false" />
+            <element signature="e#1664#1773#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -514,35 +480,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/markov.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="230" column="25" selection-start-line="230" selection-start-column="25" selection-end-line="230" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#2224#3119#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bassmine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/V_test_init.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -556,6 +493,41 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="6088" selection-start-line="0" selection-start-column="6088" selection-end-line="0" selection-end-column="6088" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bassmine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="98" column="23" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="23" />
+          <folding>
+            <element signature="e#31#44#0" expanded="true" />
+            <element signature="e#221#437#0" expanded="false" />
+            <element signature="e#984#1629#0" expanded="false" />
+            <element signature="e#1664#1773#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/markov.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="224" column="49" selection-start-line="220" selection-start-column="4" selection-end-line="224" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#2249#3144#0" expanded="false" />
+            <element signature="e#6703#7131#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.477314">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

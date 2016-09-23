@@ -61,13 +61,13 @@ class MarkovModel:
 			self.update_interlocking(patt_kick[i], patt_bass[i])
 
 	def update_interlocking(self, x, y):
-		self.support_interlocking[x, y] += 1.
+		self.support_interlocking[int(x), int(y)] += 1.
 
 	def update_temporal(self, x, y):
-		self.support_temporal[x, y] += 1.
+		self.support_temporal[int(x), int(y)] += 1.
 
 	def update_initial(self, x):
-		self.support_initial[x] += 1.
+		self.support_initial[int(x)] += 1.
 
 	def normalize_model(self):
 
