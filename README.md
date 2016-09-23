@@ -8,11 +8,11 @@ Requeriments:
   <li>Pyhton packages: numpy, madmom</li>
       
       
-  flext - Follow https://github.com/GiantSteps/Flext
+  <li>flext - Follow https://github.com/GiantSteps/Flext</li>
   
-  pyext - (python and numpy in Max) - Follow https://github.com/grrrr/py/issues/1
+  <li>pyext - (python and numpy in Max) - Follow https://github.com/grrrr/py/issues/1</li>
   
-  Ableton Live with MaxForLive
+  <li>Ableton Live with MaxForLive</li>
   
   
 Installation:
