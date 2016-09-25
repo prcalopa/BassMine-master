@@ -9,9 +9,9 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 45.0, 79.0, 1079.0, 693.0 ],
+		"rect" : [ 45.0, 79.0, 337.0, 278.0 ],
 		"bglocked" : 0,
-		"openinpresentation" : 0,
+		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
@@ -37,6 +37,50 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontface" : 3,
+					"fontsize" : 20.0,
+					"id" : "obj-78",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 804.0, 624.0, 247.0, 29.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 16.0, 10.0, 247.0, 29.0 ],
+					"style" : "",
+					"text" : "BASSMINE ENGINE"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-75",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 78.0, 168.0, 150.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 44.0, 159.5, 150.0, 20.0 ],
+					"style" : "",
+					"text" : "New Melody"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-67",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 72.0, 123.0, 150.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 44.0, 124.0, 150.0, 20.0 ],
+					"style" : "",
+					"text" : "New Bassline"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-69",
 					"maxclass" : "button",
@@ -70,6 +114,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 183.5, 74.5, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 16.0, 157.5, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -231,8 +277,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 799.0, 473.0, 150.0, 20.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 136.0, 9.0, 150.0, 20.0 ],
 					"style" : "",
 					"text" : "STYLE"
 				}
@@ -246,9 +290,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 799.0, 575.0, 150.0, 47.0 ],
-					"presentation" : 1,
-					"presentation_linecount" : 3,
-					"presentation_rect" : [ 358.0, 27.5, 155.0, 47.0 ],
 					"style" : "",
 					"text" : "Select MIDI clip in Live containing drums and press bang!"
 				}
@@ -262,9 +303,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 799.0, 495.0, 150.0, 33.0 ],
-					"presentation" : 1,
-					"presentation_linecount" : 2,
-					"presentation_rect" : [ 160.0, 34.5, 87.0, 33.0 ],
 					"style" : "",
 					"text" : "Booka Shade\nMr Scruff"
 				}
@@ -273,14 +311,15 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-71",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 799.0, 552.0, 150.0, 20.0 ],
+					"patching_rect" : [ 799.0, 552.0, 150.0, 33.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 332.0, 9.0, 150.0, 20.0 ],
+					"presentation_rect" : [ 16.0, 48.5, 214.0, 20.0 ],
 					"style" : "",
-					"text" : "KICK INTERLOCKING"
+					"text" : "KICK  PATTERN for INTERLOCKING"
 				}
 
 			}
@@ -383,7 +422,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 849.0, 365.0, 50.0, 116.0 ],
 					"style" : "",
-					"text" : "8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8"
+					"text" : "9 0 0 0 9 0 0 0 9 0 0 0 9 0 0 0 9 0 0 0 9 0 0 0 9 0 0 0 9 0 0 0"
 				}
 
 			}
@@ -461,8 +500,6 @@
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 148.0, 122.0, 18.0, 34.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 136.0, 34.5, 18.0, 34.0 ],
 					"size" : 2,
 					"style" : "",
 					"value" : 0
@@ -504,9 +541,9 @@
 					"patching_rect" : [ 40.0, 140.0, 89.0, 62.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 2,
-					"presentation_rect" : [ 328.0, 85.5, 189.0, 35.0 ],
+					"presentation_rect" : [ 16.0, 75.5, 214.0, 35.0 ],
 					"style" : "",
-					"text" : "8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8"
+					"text" : "9 0 0 0 9 0 0 0 9 0 0 0 9 0 0 0 9 0 0 0 9 0 0 0 9 0 0 0 9 0 0 0"
 				}
 
 			}
@@ -1040,6 +1077,8 @@
 					"outlettype" : [ "bang" ],
 					"outlinecolor" : [ 0.952941, 0.564706, 0.098039, 1.0 ],
 					"patching_rect" : [ 248.0, 51.0, 33.0, 33.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 16.0, 122.0, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -1121,7 +1160,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 218.0, 316.5, 150.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 165.0, 94.5, 150.0, 20.0 ],
+					"presentation_rect" : [ 44.0, 193.5, 150.0, 20.0 ],
 					"style" : "",
 					"text" : "Load models"
 				}
@@ -1136,7 +1175,7 @@
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 179.0, 309.0, 35.0, 35.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 137.0, 92.5, 24.0, 24.0 ],
+					"presentation_rect" : [ 16.0, 191.5, 24.0, 24.0 ],
 					"style" : ""
 				}
 
