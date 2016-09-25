@@ -310,3 +310,23 @@ function set_chord_track()
   //post(chord_track_id);post();  
 }
 
+function set_octave()
+{
+  _octave = arguments[0];
+}
+
+function get_octave()
+{
+  post(_octave);post();
+}
+
+function set_rootnote()
+{
+  _root_note = arguments[0];
+}
+
+function get_rootnote()
+{
+  post(_root_note);post();
+}
+
