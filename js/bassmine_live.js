@@ -214,7 +214,7 @@ function genPattern()
     var tmp = note_clip.get(i.toString())
     //post(tmp[1]);
     // Pitch should be determined
-    _pitch = tmp[0] + _root_note + (12 * _octave);
+    _pitch = tmp[0] + (_root_note + (12 * _octave));
     _start = tmp[1];
     _dur = tmp[2];
     _vel = tmp[3];
@@ -261,6 +261,8 @@ function readClip()
   else if(clip.getTrack() == chord_track_id)
   {
     post("chords");post();
+    //log(notes_all);
+
   }
   else if(clip.getTrack() == bass_track_id)
   {

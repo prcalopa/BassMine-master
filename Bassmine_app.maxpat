@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 45.0, 79.0, 285.0, 282.0 ],
+		"rect" : [ 45.0, 79.0, 803.0, 700.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -415,14 +415,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-55",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 849.0, 365.0, 50.0, 116.0 ],
+					"patching_rect" : [ 849.0, 365.0, 50.0, 49.0 ],
 					"style" : "",
-					"text" : "8 8 8 10"
+					"text" : "8 9 4 8 8 9 4 10"
 				}
 
 			}
@@ -502,7 +502,7 @@
 					"patching_rect" : [ 148.0, 122.0, 18.0, 34.0 ],
 					"size" : 2,
 					"style" : "",
-					"value" : 1
+					"value" : 0
 				}
 
 			}
@@ -533,15 +533,16 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-12",
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 40.0, 140.0, 89.0, 22.0 ],
+					"patching_rect" : [ 40.0, 140.0, 89.0, 35.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 16.0, 75.5, 214.0, 22.0 ],
 					"style" : "",
-					"text" : "8 8 8 10"
+					"text" : "8 9 4 8 8 9 4 10"
 				}
 
 			}
@@ -1090,7 +1091,7 @@
 					"outlettype" : [ "", "", "", "", "" ],
 					"patching_rect" : [ 248.0, 153.0, 74.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "bassmine",
+						"filename" : "bassmine.js",
 						"parameter_enable" : 0
 					}
 ,

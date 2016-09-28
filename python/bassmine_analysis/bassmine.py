@@ -118,7 +118,9 @@ def corpus_analysis(bass_path, drum_path):
 		onset_bass = bass_midi.notes[:, 0]
 		print bass_midi.notes[:,1] - bass_midi.notes[0,1] + 12
 		# Pitch Contour
-		pitch_contours.append(bass_midi.notes[:,1] - bass_midi.notes[0,1])
+		# compute diff
+		pitch_contours.append(bass_midi.notes[:,1] - (bass_midi.notes[0,1] + 12))
+		#pitch_contours.append(np.diff(bass_midi.notes[:, 1]))
 
 		# Quantize rhythm
 		bass_rhythm = quantize_pattern(onset_bass)

@@ -308,7 +308,7 @@ def constrainMM(markov_model, target):
 	for l in range(len(V)-1):
 		print V[l]
 		Vdict[l] = V[l]
-"""
+	"""
 	# export to JSON
 	with open( 'V_test.json', 'w') as outfile:
 		json.dump(out_Model, outfile)

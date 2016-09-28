@@ -8,7 +8,7 @@ import csv
 style = {1: 'booka_shade', 2: 'mr_scruff'}
 
 # SELECT STYLE
-style_id = 1
+style_id = 2
 
 bass_path = '../../corpus/' + style[style_id] + '/bass'
 drum_path = '../../corpus/' + style[style_id] + '/drums'
