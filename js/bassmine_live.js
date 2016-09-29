@@ -120,6 +120,12 @@ Clip.prototype.replaceAllNotes = function(notes) {
   this.selectAllNotes();
   this.replaceSelectedNotes(notes);
 }
+
+// Not working
+Clip.prototype.setLoopEnd = function() {
+  this.liveObject.call("loop_end", 16);
+  this._sendNotes(notes);
+}
  
 //--------------------------------------------------------------------
 // Note class
@@ -233,6 +239,7 @@ function genPattern()
     post("New Bassline");post();
     clip.replaceAllNotes(notes);
   }
+  //clip.setLoopEnd();
 
 }
 

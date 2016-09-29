@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>templateCollection</key>
+	<array>
+		<dict>
+			<key>collectionView</key>
+			<array>
+				<dict>
+					<key>borderColor</key>
+					<string>{{0, 0}, {0, 1}}</string>
+					<key>borderOn</key>
+					<string>1</string>
+					<key>collectionView</key>
+					<array/>
+					<key>color</key>
+					<string>{{0, 0}, {0, 0}}</string>
+					<key>relativeFrame</key>
+					<string>{{0.2, 0.57999998}, {0.1, 0.30000001}}</string>
+					<key>token</key>
+					<string>window</string>
+				</dict>
+				<dict>
+					<key>borderColor</key>
+					<string>{{0, 0}, {0, 1}}</string>
+					<key>borderOn</key>
+					<string>1</string>
+					<key>collectionView</key>
+					<array/>
+					<key>color</key>
+					<string>{{0, 0}, {0, 0}}</string>
+					<key>relativeFrame</key>
+					<string>{{0.2, 0.2}, {0.1, 0.30000001}}</string>
+					<key>token</key>
+					<string>window</string>
+				</dict>
+				<dict>
+					<key>borderColor</key>
+					<string>{{0, 0}, {0, 1}}</string>
+					<key>borderOn</key>
+					<string>1</string>
+					<key>collectionView</key>
+					<array/>
+					<key>color</key>
+					<string>{{0, 0}, {0, 0}}</string>
+					<key>relativeFrame</key>
+					<string>{{0.2, 0.2}, {0.1, 0.30000001}}</string>
+					<key>token</key>
+					<string>window</string>
+				</dict>
+				<dict>
+					<key>borderColor</key>
+					<string>{{0.30000001, 0.30000001}, {0.30000001, 0.2}}</string>
+					<key>borderOn</key>
+					<string>0</string>
+					<key>color</key>
+					<string>{{0.80000001, 0.63200003}, {0.016000001, 1}}</string>
+					<key>momentaryButton</key>
+					<string>1</string>
+					<key>oneHitButton</key>
+					<string>0</string>
+					<key>parameter</key>
+					<dict>
+						<key>deviceIndices</key>
+						<data>
+						</data>
+						<key>deviceName</key>
+						<string>MxDeviceMidiEffect</string>
+						<key>deviceNr</key>
+						<string>0</string>
+						<key>deviceSteps</key>
+						<string>0</string>
+						<key>parameterNr</key>
+						<string>2</string>
+						<key>parameterType</key>
+						<string>typeDevice</string>
+						<key>rangeMax</key>
+						<string>1.000000</string>
+						<key>rangeMin</key>
+						<string>0.000000</string>
+						<key>trackNr</key>
+						<string>0</string>
+						<key>trackType</key>
+						<string>track</string>
+					</dict>
+					<key>relativeFrame</key>
+					<string>{{0.07, 0.18000001}, {0.15000001, 0.20999999}}</string>
+					<key>titleEnabled</key>
+					<string>0</string>
+					<key>token</key>
+					<string>dbButton</string>
+					<key>valueEnabled</key>
+					<string>1</string>
+				</dict>
+				<dict>
+					<key>borderColor</key>
+					<string>{{0, 0}, {0, 1}}</string>
+					<key>borderOn</key>
+					<string>0</string>
+					<key>color</key>
+					<string>{{0, 0}, {0, 0}}</string>
+					<key>labelFontSize</key>
+					<string>21</string>
+					<key>labelText</key>
+					<string>INTERLOCKING</string>
+					<key>relativeFrame</key>
+					<string>{{0.02, 0.039999999}, {0.25999999, 0.12}}</string>
+					<key>token</key>
+					<string>GLLabel</string>
+				</dict>
+				<dict>
+					<key>borderColor</key>
+					<string>{{0, 0}, {0, 1}}</string>
+					<key>borderOn</key>
+					<string>0</string>
+					<key>color</key>
+					<string>{{0, 0}, {0, 0}}</string>
+					<key>labelFontSize</key>
+					<string>21</string>
+					<key>labelText</key>
+					<string>BASSLINE GENERATION</string>
+					<key>relativeFrame</key>
+					<string>{{0.31, 0.039999999}, {0.25999999, 0.12}}</string>
+					<key>token</key>
+					<string>GLLabel</string>
+				</dict>
+				<dict>
+					<key>borderColor</key>
+					<string>{{0.30000001, 0.30000001}, {0.30000001, 0.2}}</string>
+					<key>borderOn</key>
+					<string>0</string>
+					<key>color</key>
+					<string>{{0.80000001, 0.63200003}, {0.016000001, 1}}</string>
+					<key>momentaryButton</key>
+					<string>0</string>
+					<key>oneHitButton</key>
+					<string>0</string>
+					<key>parameter</key>
+					<dict>
+						<key>deviceIndices</key>
+						<data>
+						</data>
+						<key>deviceName</key>
+						<string>MxDeviceMidiEffect</string>
+						<key>deviceNr</key>
+						<string>0</string>
+						<key>deviceSteps</key>
+						<string>0</string>
+						<key>parameterNr</key>
+						<string>1</string>
+						<key>parameterType</key>
+						<string>typeDevice</string>
+						<key>rangeMax</key>
+						<string>1.000000</string>
+						<key>rangeMin</key>
+						<string>0.000000</string>
+						<key>trackNr</key>
+						<string>0</string>
+						<key>trackType</key>
+						<string>track</string>
+					</dict>
+					<key>relativeFrame</key>
+					<string>{{0.33000001, 0.18000001}, {0.15000001, 0.20999999}}</string>
+					<key>titleEnabled</key>
+					<string>0</string>
+					<key>token</key>
+					<string>dbButton</string>
+					<key>valueEnabled</key>
+					<string>1</string>
+				</dict>
+				<dict>
+					<key>borderColor</key>
+					<string>{{0, 0}, {0, 1}}</string>
+					<key>borderOn</key>
+					<string>0</string>
+					<key>color</key>
+					<string>{{0, 0}, {0, 0}}</string>
+					<key>labelFontSize</key>
+					<string>13</string>
+					<key>labelText</key>
+					<string>new bassline</string>
+					<key>relativeFrame</key>
+					<string>{{0.36000001, 0.38999999}, {0.1, 0.090000004}}</string>
+					<key>token</key>
+					<string>GLLabel</string>
+				</dict>
+				<dict>
+					<key>borderColor</key>
+					<string>{{0.30000001, 0.30000001}, {0.30000001, 0.2}}</string>
+					<key>borderOn</key>
+					<string>0</string>
+					<key>color</key>
+					<string>{{0.80000001, 0.63200003}, {0.016000001, 1}}</string>
+					<key>momentaryButton</key>
+					<string>0</string>
+					<key>oneHitButton</key>
+					<string>0</string>
+					<key>parameter</key>
+					<dict>
+						<key>deviceIndices</key>
+						<data>
+						</data>
+						<key>deviceName</key>
+						<string>MxDeviceMidiEffect</string>
+						<key>deviceNr</key>
+						<string>0</string>
+						<key>deviceSteps</key>
+						<string>0</string>
+						<key>parameterNr</key>
+						<string>3</string>
+						<key>parameterType</key>
+						<string>typeDevice</string>
+						<key>rangeMax</key>
+						<string>1.000000</string>
+						<key>rangeMin</key>
+						<string>0.000000</string>
+						<key>trackNr</key>
+						<string>0</string>
+						<key>trackType</key>
+						<string>track</string>
+					</dict>
+					<key>relativeFrame</key>
+					<string>{{0.51999998, 0.18000001}, {0.15000001, 0.20999999}}</string>
+					<key>titleEnabled</key>
+					<string>0</string>
+					<key>token</key>
+					<string>dbButton</string>
+					<key>valueEnabled</key>
+					<string>1</string>
+				</dict>
+				<dict>
+					<key>borderColor</key>
+					<string>{{0, 0}, {0, 1}}</string>
+					<key>borderOn</key>
+					<string>0</string>
+					<key>color</key>
+					<string>{{0, 0}, {0, 0}}</string>
+					<key>labelFontSize</key>
+					<string>13</string>
+					<key>labelText</key>
+					<string>new melody</string>
+					<key>relativeFrame</key>
+					<string>{{0.55000001, 0.38999999}, {0.1, 0.090000004}}</string>
+					<key>token</key>
+					<string>GLLabel</string>
+				</dict>
+				<dict>
+					<key>borderColor</key>
+					<string>{{0, 0}, {0, 1}}</string>
+					<key>borderOn</key>
+					<string>0</string>
+					<key>color</key>
+					<string>{{0, 0}, {0, 0}}</string>
+					<key>faderCapColor</key>
+					<string>{{0.56999999, 0.56999999}, {0.56999999, 1}}</string>
+					<key>faderColor</key>
+					<string>{{0.95999998, 0.43000001}, {0, 1}}</string>
+					<key>parameter</key>
+					<dict>
+						<key>deviceIndices</key>
+						<data>
+						</data>
+						<key>deviceName</key>
+						<string>MxDeviceMidiEffect</string>
+						<key>deviceNr</key>
+						<string>0</string>
+						<key>deviceSteps</key>
+						<string>0</string>
+						<key>parameterNr</key>
+						<string>8</string>
+						<key>parameterType</key>
+						<string>typeDevice</string>
+						<key>rangeMax</key>
+						<string>5.000000</string>
+						<key>rangeMin</key>
+						<string>0.000000</string>
+						<key>trackNr</key>
+						<string>0</string>
+						<key>trackType</key>
+						<string>track</string>
+					</dict>
+					<key>relativeFaders</key>
+					<string>1</string>
+					<key>relativeFrame</key>
+					<string>{{0.77999997, 0.059999999}, {0.14, 0.18000001}}</string>
+					<key>titleEnabled</key>
+					<string>0</string>
+					<key>token</key>
+					<string>dbRotary</string>
+					<key>valueEnabled</key>
+					<string>1</string>
+					<key>vertical</key>
+					<string>1</string>
+				</dict>
+				<dict>
+					<key>borderColor</key>
+					<string>{{0, 0}, {0, 1}}</string>
+					<key>borderOn</key>
+					<string>0</string>
+					<key>color</key>
+					<string>{{0, 0}, {0, 0}}</string>
+					<key>labelFontSize</key>
+					<string>17</string>
+					<key>labelText</key>
+					<string>OCTAVE</string>
+					<key>relativeFrame</key>
+					<string>{{0.76999998, 0.0099999998}, {0.16, 0.13}}</string>
+					<key>token</key>
+					<string>GLLabel</string>
+				</dict>
+				<dict>
+					<key>borderColor</key>
+					<string>{{0, 0}, {0, 1}}</string>
+					<key>borderOn</key>
+					<string>0</string>
+					<key>color</key>
+					<string>{{0, 0}, {0, 0}}</string>
+					<key>faderCapColor</key>
+					<string>{{0.56999999, 0.56999999}, {0.56999999, 1}}</string>
+					<key>faderColor</key>
+					<string>{{0.95999998, 0.43000001}, {0, 1}}</string>
+					<key>parameter</key>
+					<dict>
+						<key>deviceIndices</key>
+						<data>
+						</data>
+						<key>deviceName</key>
+						<string>MxDeviceMidiEffect</string>
+						<key>deviceNr</key>
+						<string>0</string>
+						<key>deviceSteps</key>
+						<string>0</string>
+						<key>parameterNr</key>
+						<string>4</string>
+						<key>parameterType</key>
+						<string>typeDevice</string>
+						<key>rangeMax</key>
+						<string>11.000000</string>
+						<key>rangeMin</key>
+						<string>0.000000</string>
+						<key>trackNr</key>
+						<string>0</string>
+						<key>trackType</key>
+						<string>track</string>
+					</dict>
+					<key>relativeFaders</key>
+					<string>0</string>
+					<key>relativeFrame</key>
+					<string>{{0.79000002, 0.25}, {0.13, 0.23}}</string>
+					<key>titleEnabled</key>
+					<string>0</string>
+					<key>token</key>
+					<string>dbRotary</string>
+					<key>valueEnabled</key>
+					<string>1</string>
+					<key>vertical</key>
+					<string>1</string>
+				</dict>
+				<dict>
+					<key>borderColor</key>
+					<string>{{0, 0}, {0, 1}}</string>
+					<key>borderOn</key>
+					<string>0</string>
+					<key>color</key>
+					<string>{{0, 0}, {0, 0}}</string>
+					<key>labelFontSize</key>
+					<string>17</string>
+					<key>labelText</key>
+					<string>ROOT</string>
+					<key>relativeFrame</key>
+					<string>{{0.76999998, 0.2}, {0.16, 0.13}}</string>
+					<key>token</key>
+					<string>GLLabel</string>
+				</dict>
+			</array>
+			<key>color</key>
+			<string>{{0, 0}, {0, 0}}</string>
+			<key>token</key>
+			<string>window</string>
+		</dict>
+	</array>
+	<key>templateName</key>
+	<string>bassmine</string>
+</dict>
+</plist>

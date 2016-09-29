@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 45.0, 79.0, 803.0, 700.0 ],
+		"rect" : [ 45.0, 79.0, 329.0, 250.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -1091,7 +1091,7 @@
 					"outlettype" : [ "", "", "", "", "" ],
 					"patching_rect" : [ 248.0, 153.0, 74.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "bassmine.js",
+						"filename" : "bassmine",
 						"parameter_enable" : 0
 					}
 ,
