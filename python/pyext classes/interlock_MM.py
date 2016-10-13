@@ -60,7 +60,6 @@ pyext Usage:
 
 try:
 	import pyext
-	import numpy as np
 	import sys
 	import random
 	import copy

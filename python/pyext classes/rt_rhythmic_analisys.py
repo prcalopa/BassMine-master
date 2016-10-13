@@ -15,9 +15,11 @@ def numberOfBeats(data):
 	:param data: number of last beat position of the midi file  np.array[()] 1D
 	:return: number of beats in the midi file. The size is approximated to be proportional to 4 beats.
 	"""
-	aux = np.array([4, 8, 16, 32, 64, 128, 256])
-	idx = abs(max(data) - aux).argmin()
-	nob = aux[idx]
+	aux = [4, 8, 16, 32, 64, 128, 256]
+	#idx = abs(max(data) - aux).argmin()
+	idx = [abs(max(data))-x for x in aux]
+	#nob = aux[idx]
+	nob =aux[indices(idx, lambda x: x == min(idx))]
 	return nob
 
 def quantize_pattern(pattern):
@@ -26,17 +28,19 @@ def quantize_pattern(pattern):
 	noBeats_bass = numberOfBeats(pattern)  # Bass files length set the global length of analysis
 	print '\n# of beats: ', noBeats_bass
 	#beat_subdiv = np.arange(start=0, step=0.25, stop=(noBeats_bass * RES) - 1)
-	subdiv_aux = np.array([0., 0.25, 0.5, 0.75])
+	subdiv_aux = [0., 0.25, 0.5, 0.75]
 	# Matrix to store the binary representation of the midi files
 	# Basslines -> 1 matrix
-	rhythm = np.zeros((noBeats_bass, RES), dtype=int)
+	#rhythm = np.zeros((noBeats_bass, RES), dtype=int)
+	rhythm = [[0] * RES]*noBeats_bass
 
 	for o in pattern:
 		# quantize to the closest subdivision
 		i, d = divmod(o, 1)  # i = row(beat number) , d = column (beat subdivision)
-		d_ = (abs(subdiv_aux - d)).argmin()
+		xx = [abs(x-d) for x in subdiv_aux]
+		d_ = indices(xx, lambda x: x == min(xx))
 		if i < noBeats_bass:
-			rhythm[int(i), d_] = 1
+			rhythm[int(i)][d_] = 1
 	return rhythm
 
 
@@ -47,6 +51,11 @@ def translate_rhythm(rhythm):
 	for beat in rhythm:
 		id.append((beat[0] * 8) + (beat[1] * 4) + (beat[2] * 2) + beat[3])
 	return id
+
+
+def indices(a, func):
+    # UF.indices(tmp_sv, lambda x: x <= target_sv[i])
+    return [i for (i, val) in enumerate(a) if func(val)]	
 #################################################################
 
 class kick_analysis(pyext._class):
