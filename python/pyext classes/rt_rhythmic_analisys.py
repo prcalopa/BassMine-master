@@ -19,7 +19,7 @@ def numberOfBeats(data):
 	#idx = abs(max(data) - aux).argmin()
 	idx = [abs(max(data))-x for x in aux]
 	#nob = aux[idx]
-	nob =aux[indices(idx, lambda x: x == min(idx))]
+	nob =aux[indices(idx, lambda x: x == min(idx))[0]]
 	return nob
 
 def quantize_pattern(pattern):
@@ -38,7 +38,7 @@ def quantize_pattern(pattern):
 		# quantize to the closest subdivision
 		i, d = divmod(o, 1)  # i = row(beat number) , d = column (beat subdivision)
 		xx = [abs(x-d) for x in subdiv_aux]
-		d_ = indices(xx, lambda x: x == min(xx))
+		d_ = indices(xx, lambda x: x == min(xx))[0]
 		if i < noBeats_bass:
 			rhythm[int(i)][d_] = 1
 	return rhythm

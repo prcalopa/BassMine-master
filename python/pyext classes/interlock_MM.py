@@ -65,6 +65,7 @@ try:
 	import copy
 	import pickle
 	import json
+	import os
 except:
 	print "ERROR: This script must be loaded by the PD/Max pyext external"
 
@@ -124,8 +125,12 @@ class build(pyext._class):
 		elif int(self.style) == 1:
 			style_path = 'mr_scruff/' 	
 		####
-		# Change path
-		path = "/Users/Pere/Github Repo/BassMine/BassMine-master/models/" 
+		# Change pat###########################################
+		tmp = os.path.dirname(__file__)
+		tmp_ = '/'.join(tmp.split('/')[:-2])
+		print tmp
+		path = tmp_ + "/models/"
+		#path = "/Users/Pere/Github Repo/BassMine/BassMine-master/models/" 
 		b0 = pickle.load( open(path+ style_path + "initial.pickle", "rb") )
 		b = pickle.load( open(path + style_path+ "temporal.pickle", "rb") )
 		inter = pickle.load( open(path + style_path + "interlocking.pickle", "rb") )
