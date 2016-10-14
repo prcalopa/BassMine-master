@@ -1,7 +1,13 @@
-try:
-	import pyext
-except:
-	print "ERROR: This script must be loaded by the PD/Max pyext external"
+def zeros2dlist(size):
+
+	out = []
+
+	for i in range(size[0]):
+		out.append([])
+		for j in range(size[1]):
+			out[i].append(0)
+	return out		
+
 
 def numberOfBeats(data):
 	"""
@@ -26,15 +32,20 @@ def quantize_pattern(pattern):
 	# Matrix to store the binary representation of the midi files
 	# Basslines -> 1 matrix
 	#rhythm = np.zeros((noBeats_bass, RES), dtype=int)
-	rhythm = zeros2dlist([noBeats_bass,RES])
+	rhythm =  zeros2dlist([noBeats_bass,RES])
+	print rhythm
 
 	for o in pattern:
 		# quantize to the closest subdivision
 		i, d = divmod(o, 1)  # i = row(beat number) , d = column (beat subdivision)
+		print "beat", i
 		xx = [abs(x-d) for x in subdiv_aux]
+		print xx
 		d_ = xx.index(min(xx))
+		print d_
 		if i < noBeats_bass:
 			rhythm[int(i)][d_] = 1
+	print rhythm
 	return rhythm
 
 
@@ -47,47 +58,12 @@ def translate_rhythm(rhythm):
 	return id
 
 
-def zeros2dlist(size):
 
-	out = []
-
-	for i in range(size[0]):
-		out.append([])
-		for j in range(size[1]):
-			out[i].append(0)
-	return out			
-#################################################################
-
-class kick_analysis(pyext._class):
-	
-
-	# number of inlets and outlets
-	_inlets=2
-	_outlets=2
-
-
-	def bang_1(self):
-		print "Bang into first inlet"
-
-	def int_1(self,f):
-		print "Integer",f,"into first inlet"
-		if (0<=f<2):
-			style = f
-			print "Style changed!"
-
-	def float_1(self,f):
-		print "Float",f,"into first inlet"
-
-	def list_1(self,*s):
-		# print "List",s,"into first inlet"
-		target = list(s)
-		####
-		# Quantize
-		kick_rhythm = quantize_pattern(target)
-		#print kick_rhythm
-		# Translate
-		kick_id = translate_rhythm(kick_rhythm)
-		
-
-		self._outlet(1,kick_id)
-
+target = [0,0.26,0.51,1,2,3.56]
+####
+# Quantize
+kick_rhythm = quantize_pattern(target)
+print kick_rhythm
+# Translate
+kick_id = translate_rhythm(kick_rhythm)	
+print kick_id

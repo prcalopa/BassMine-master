@@ -119,13 +119,13 @@ class build(pyext._class):
 		# print "List",s,"into first inlet"
 		target = list(s)
 		####
-		# IMPLEMENT STYLE CHANGE
+		# STYLE CHANGE
 		if int(self.style) == 0:
 			style_path = 'booka_shade/'
 		elif int(self.style) == 1:
 			style_path = 'mr_scruff/' 	
 		####
-		# Change pat###########################################
+		# Load Models
 		tmp = os.path.dirname(__file__)
 		tmp_ = '/'.join(tmp.split('/')[:-2])
 		print tmp
@@ -144,11 +144,15 @@ class build(pyext._class):
 		#print "Initial dict ", Dom_init
 		#print "Temporal dict ", Dom_B
 		#print "Interlocking dict ", Dom_I
-
+		
 		## Representation of target kick pattern as variable domain
 		target_setlist = []
 		for t in target:
-			target_setlist.append(Dom_I[t])
+			# RELAXATION RULE: if the target kick is not in the model consider metronome pulse as kick
+			if t in Dom_I:
+				target_setlist.append(Dom_I[t])
+			else:
+				target_setlist.append(Dom_I[8])	
 		#print target_setlist
 
 		## V store the domain of patterns at each step
