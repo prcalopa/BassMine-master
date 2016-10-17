@@ -128,7 +128,7 @@ class build(pyext._class):
 		# Load Models
 		tmp = os.path.dirname(__file__)
 		tmp_ = '/'.join(tmp.split('/')[:-2])
-		print tmp
+		#print tmp
 		path = tmp_ + "/models/"
 		#path = "/Users/Pere/Github Repo/BassMine/BassMine-master/models/" 
 		b0 = pickle.load( open(path+ style_path + "initial.pickle", "rb") )
@@ -153,6 +153,7 @@ class build(pyext._class):
 				target_setlist.append(Dom_I[t])
 			else:
 				target_setlist.append(Dom_I[8])	
+				print "Kick pattern mistmatch"
 		#print target_setlist
 
 		## V store the domain of patterns at each step

@@ -43,9 +43,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 768.0, 226.0, 67.0, 22.0 ],
+					"patching_rect" : [ 768.0, 226.0, 57.0, 22.0 ],
 					"style" : "",
-					"text" : "0.5 1 2 3 4"
+					"text" : "0.5 1 2 3"
 				}
 
 			}
@@ -449,7 +449,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 849.0, 365.0, 50.0, 35.0 ],
 					"style" : "",
-					"text" : "10 10 10 10"
+					"text" : "14 0 8 8"
 				}
 
 			}
@@ -529,7 +529,7 @@
 					"patching_rect" : [ 148.0, 122.0, 18.0, 34.0 ],
 					"size" : 2,
 					"style" : "",
-					"value" : 0
+					"value" : 1
 				}
 
 			}
@@ -568,7 +568,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 16.0, 75.5, 214.0, 22.0 ],
 					"style" : "",
-					"text" : "10 10 10 10"
+					"text" : "14 0 8 8"
 				}
 
 			}
@@ -1790,6 +1790,7 @@
 		"dependency_cache" : [ 			{
 				"name" : "bassmine.js",
 				"bootpath" : "~/Github_Repo/BassMine/BassMine-master/js",
+				"patcherrelativepath" : "../../../../Github_Repo/BassMine/BassMine-master/js",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
