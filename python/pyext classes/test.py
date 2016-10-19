@@ -1,69 +1,181 @@
-def zeros2dlist(size):
+import pickle
+import os
 
-	out = []
+def markov_tm_2dict(a):
+	out = dict()
+	key = 0
 
-	for i in range(size[0]):
-		out.append([])
-		for j in range(size[1]):
-			out[i].append(0)
-	return out		
-
-
-def numberOfBeats(data):
-	"""
-	Number of beats of a midi file
-	:param data: number of last beat position of the midi file  np.array[()] 1D
-	:return: number of beats in the midi file. The size is approximated to be proportional to 4 beats.
-	"""
-	aux = [4, 8, 16, 32, 64, 128, 256]
-	#idx = abs(max(data) - aux).argmin()
-	idx = [abs(max(data)-x) for x in aux]
-	#nob = aux[idx]
-	nob = aux[idx.index(min(idx))]
-	return nob
-
-def quantize_pattern(pattern):
-	RES = 4
-
-	noBeats_bass = numberOfBeats(pattern)  # Bass files length set the global length of analysis
-	print '\n# of beats: ', noBeats_bass
-	#beat_subdiv = np.arange(start=0, step=0.25, stop=(noBeats_bass * RES) - 1)
-	subdiv_aux = [0., 0.25, 0.5, 0.75]
-	# Matrix to store the binary representation of the midi files
-	# Basslines -> 1 matrix
-	#rhythm = np.zeros((noBeats_bass, RES), dtype=int)
-	rhythm =  zeros2dlist([noBeats_bass,RES])
-	print rhythm
-
-	for o in pattern:
-		# quantize to the closest subdivision
-		i, d = divmod(o, 1)  # i = row(beat number) , d = column (beat subdivision)
-		print "beat", i
-		xx = [abs(x-d) for x in subdiv_aux]
-		print xx
-		d_ = xx.index(min(xx))
-		print d_
-		if i < noBeats_bass:
-			rhythm[int(i)][d_] = 1
-	print rhythm
-	return rhythm
-
-
-def translate_rhythm(rhythm):
-
-	id = []
-
-	for beat in rhythm:
-		id.append((beat[0] * 8) + (beat[1] * 4) + (beat[2] * 2) + beat[3])
-	return id
+	if len(a.shape) == 2:
+		for row in a:
+			value = 0
+			tmp_dom = []
+			if sum(row) > 0:
+				for col in row:
+					if col > 0:
+						tmp_dom.append(str(value))
+					value += 1
+				out[key] = set(tmp_dom)
+			key += 1
+		return out
+	elif len(a.shape) == 1:
+		tmp_dom = []
+		value = 0
+		for col in a:
+			if col > 0:
+				tmp_dom.append(str(value))
+			value += 1
+		return set(tmp_dom)
+	else:
+		print "Wrong size"
 
 
 
-target = [0,0.26,0.51,1,2,3.56]
-####
-# Quantize
-kick_rhythm = quantize_pattern(target)
-print kick_rhythm
-# Translate
-kick_id = translate_rhythm(kick_rhythm)	
-print kick_id
+
+
+style_path = 'mr_scruff/' 	
+		
+tmp = os.path.dirname(__file__)
+tmp_ = '/'.join(tmp.split('/')[:-2])
+#print tmp
+path = tmp_ + "/models/"
+b = pickle.load( open(path + style_path+ "temporal.pickle", "rb") )
+		
+Dom_B = markov_tm_2dict(b)
+
+
+# target
+target = [8,8,4,14,4,10,8,2,8]
+
+# Create V : variable domain for transitions
+V = []
+
+V.append(dict())
+
+if target[1] >= 0:
+	V[0][target[0]] = set([str(target[1])])
+else:
+	V[0][target[0]] = Dom_B[target[0]]
+
+
+for i in range(1,len(target)-1):
+
+	V.append(dict())
+
+	if target[i] >= 0:  # Current beat don't vary
+
+		for key, value in V[i-1].iteritems():
+		
+			# store keys that match target[i]
+			tmp_key = value.intersection(set([str(target[i])]))
+			if len(tmp_key) > 0:
+				V[i][int(list(tmp_key)[0])] = Dom_B[int(list(tmp_key)[0])]
+			#V[i][target[i-1]] = set([str(target[i])])
+
+	else:  # Current beat varies
+
+		#Check possible continuations from V[i-1] as Key candidates in V[i]
+		for key, value in V[i-1].iteritems():
+
+			for v in value:
+				V[i][int(v)] = Dom_B[int(v)]
+
+		print "h"
+
+
+V.append(dict())
+
+V[len(target)-1][target[len(target)-1]] = Dom_B[target[len(target)-1]]		
+"""
+for i in range(1,len(target)-1):
+
+	V.append(dict())
+
+	if target[i]>=0:
+		#print "No variation in current beat"
+
+		if target[i-1]>=0:
+			#print "No variation in previous beat"
+			V[i-1][target[i-1]] = set([str(target[i])])
+		else:	
+			#print "Variation in previous beat"
+			# for each continuation check those that match with current beat value
+			# CHANGE
+			if target[i+1] < 0:
+				V[i-1] = Dom_B
+			else:
+				#print "Next beat fixed"	
+				for key, value in Dom_B.iteritems():
+					#print value
+					#print target[i+1]
+					tmp_int = value.intersection(str(target[i+1]))
+					#print tmp_int
+					# also check not to include keys that are not possible
+					if len(tmp_int)>0:
+						if key == target[i]:
+							V[i-1][key] = tmp_int
+
+
+		#print "\n"	
+
+	else:
+		#print "Variation in current beat"	
+
+		if target[i-1]>=0:
+		#	print "No variation in previous beat"
+			V[i-1][target[i-1]] = Dom_B[target[i-1]]
+		else:	
+		#	print "Variation in previous beat"
+			# CHANGE
+			if target[i+1] < 0:
+				V[i-1] = Dom_B
+			else:
+		#		print "Next beat fixed"	
+				for key, value in Dom_B.iteritems():
+					#print value
+		#			print target[i+1]
+					tmp_int = value.intersection(str(target[i+1]))
+		#			print tmp_int
+					if len(tmp_int)>0:
+						if key == target[i]:
+							V[i-1][key] = tmp_int 
+
+		#print "\n"	
+"""
+#print V		
+for v in V:
+	print v
+	print "\n"
+
+
+## Delete values from each key in V[i] that are not in V[i+1]
+val_del = dict()
+## Font-propagation	
+for step in range(1,len(target)-1):
+	val_del_temp = []
+	next_key = set([str(x) for x in V[step].keys()])
+	#print next_key
+	for key, value in V[step-1].iteritems():
+		#print key, value
+		tmp_int = value.intersection(next_key)
+		#if len(tmp_int) > 0:
+		V[step-1][key] = tmp_int
+		if len(tmp_int) == 0:
+			val_del_temp.append(key)
+	val_del[step] = val_del_temp
+#print val_del
+## Back-propagation
+for step, value in val_del.iteritems():
+	if len(value) > 0:
+		for v in value:
+			## Delete key
+			V[step-1].pop(v, None)
+		## Delete in previous continuations
+		#print V[step-2]
+		for idx in V[step-2].keys():
+			V[step-2][idx] = set([str(x) for x in V[step-1].keys()]).intersection(V[step-2][idx])
+# BUILD FINAL DICTIONARY		
+
+print "Cleaned-UP"		
+for v in V:
+	print v
+	print "\n"

@@ -85,58 +85,62 @@ class build(pyext._class):
 		#print "Temporal dict ", Dom_B
 		#print "Interlocking dict ", Dom_I
 		
-		## Representation of target kick pattern as variable domain
-		target_setlist = []
-		for t in target:
-			# RELAXATION RULE: if the target kick is not in the model consider metronome pulse as kick
-			if t >= 0:
-				target_setlist.append(t)
-			else:
-				target_setlist.append(Dom_B.keys())	
-				#print "Kick pattern mistmatch"
-		#print target_setlist
+		# target
+		#target = [8,8,4,-2,2,0,4,-2,8]
 
-		## V store the domain of patterns at each step
+		# Create V : variable domain for transitions
 		V = []
 
-		#filter_init = Dom_init.intersection(target_setlist[0])
-		#print list(filter_init)
-		## Look for possible continuations of filter_init in Dom_B, constrained to target_list[1]
+
+		# target
+		#target = [8,8,4,14,4,10,8,2,8]
+
 		V.append(dict())
-		tmp = []
-		#for f in filter_init:
-		#	print "Possible intital continuations",f, Dom_B[int(f)]
-		#	print "Kick constrain", target_setlist[1]
-		#	print "Intersection", Dom_B[int(f)].intersection(target_setlist[1])
 
-		#	if len(Dom_B[int(f)].intersection(target_setlist[1])) > 0:
-		#		V[0][int(f)] = Dom_B[int(f)].intersection(target_setlist[1])
-		#		tmp.append(f)
-		#	print "\n\n"
-		V[0][target_setlist[0]] = Dom_B[target_setlist[0]]
-		#print "Kick constr", list(target_setlist[0])
-		#print "V0", V[0]
-		#print "V1", V[1].keys()	# Domain for step 1 / rows  of transition matrix
-		#print V[1]
+		if target[1] >= 0:
+			V[0][target[0]] = set([str(target[1])])
+		else:
+			V[0][target[0]] = Dom_B[target[0]]
 
-		## Create rest of V
-		##############################################
-		## Make backtrack free Non-Homogeneuous Markov Model ordr 1
-		##############################################
-		for step in range(1, len(target)-1):
+
+		for i in range(1,len(target)-1):
+
 			V.append(dict())
-			#print "Kick constr", list(target_setlist[step])
-			# for each v in V[step] keep continuations that match interlocking with step+1
-			for t in target_setlist[step]:
-				if len(Dom_B[int(t)].intersection(target_setlist[step+1])):
-					V[step][int(t)] =  Dom_B[int(t)].intersection(target_setlist[step+1])
-			#print "check\n"
-			#print "V", step, V[step].keys()
+
+			if target[i] >= 0:  # Current beat don't vary
+
+				for key, value in V[i-1].iteritems():
+				
+					# store keys that match target[i]
+					tmp_key = value.intersection(set([str(target[i])]))
+					if len(tmp_key) > 0:
+						V[i][int(list(tmp_key)[0])] = Dom_B[int(list(tmp_key)[0])]
+					#V[i][target[i-1]] = set([str(target[i])])
+
+			else:  # Current beat varies
+
+				#Check possible continuations from V[i-1] as Key candidates in V[i]
+				for key, value in V[i-1].iteritems():
+
+					for v in value:
+						V[i][int(v)] = Dom_B[int(v)]
+
+				print "h"
+
+
+		V.append(dict())
+
+		V[len(target)-1][target[len(target)-1]] = Dom_B[target[len(target)-1]]		
+
+		#print V		
+		for v in V:
+			print v
+			print "\n"
 
 		## Delete values from each key in V[i] that are not in V[i+1]
 		val_del = dict()
 		## Font-propagation	
-		for step in range(1,len(target)-1):
+		for step in range(1,len(target)-2):
 			val_del_temp = []
 			next_key = set([str(x) for x in V[step].keys()])
 			#print next_key
@@ -162,6 +166,7 @@ class build(pyext._class):
 		# BUILD FINAL DICTIONARY			
 		#print "\nFinal Model:"
 		out_Model = {}
+		"""
 		init = []
 		init_dict = dict()
 		for key in V[0]:
@@ -170,6 +175,7 @@ class build(pyext._class):
 		init_dict['initial']['prob'] = list(init/sum(init))
 		init_dict['initial']['pattern'] = V[0].keys()
 		#print init_dict
+		"""
 		for i in range(len(V)):
 			out_Model[i] = {}
 			#print "step:",i
@@ -181,17 +187,18 @@ class build(pyext._class):
 				for v in val:
 					tmp.append(b[key, int(v)])
 				#print list(tmp/sum(tmp))
+				print tmp
 				out_Model[i][key]['pattern'] = [int(x) for x in val]
 				out_Model[i][key]['probs'] = list(tmp/sum(tmp))
 		#print out_Model
 		with open( path + 'NHModel_var.json', 'w') as outfile:
 			json.dump(out_Model, outfile)
 			outfile.close()
-
-		with open( path + 'Model_init.json', 'w') as outfile:
+		"""	
+		with open( path + 'Model_init_var.json', 'w') as outfile:
 			json.dump(init_dict, outfile)
 			outfile.close()
-
+		"""	
 		print("Model build!")
 		self._outlet(1,1)	
 
