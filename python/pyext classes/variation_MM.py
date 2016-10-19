@@ -125,12 +125,12 @@ class build(pyext._class):
 					for v in value:
 						V[i][int(v)] = Dom_B[int(v)]
 
-				print "h"
+				#print "h"
 
 
-		V.append(dict())
+		#V.append(dict())
 
-		V[len(target)-1][target[len(target)-1]] = Dom_B[target[len(target)-1]]		
+		#V[len(target)-1][target[len(target)-1]] = set([str(target[len(target)-1])])		
 
 		#print V		
 		for v in V:
@@ -140,7 +140,7 @@ class build(pyext._class):
 		## Delete values from each key in V[i] that are not in V[i+1]
 		val_del = dict()
 		## Font-propagation	
-		for step in range(1,len(target)-2):
+		for step in range(1,len(target)-1):
 			val_del_temp = []
 			next_key = set([str(x) for x in V[step].keys()])
 			#print next_key
@@ -165,17 +165,28 @@ class build(pyext._class):
 					V[step-2][idx] = set([str(x) for x in V[step-1].keys()]).intersection(V[step-2][idx])
 		# BUILD FINAL DICTIONARY			
 		#print "\nFinal Model:"
+
+		for key,val in V[len(V)-1].iteritems():
+			tmp_val  = val.intersection(set([str(target[len(target)-1])]))
+			print tmp_val
+			if len(tmp_val)>0:
+				V[len(V)-1][key] = tmp_val
+
 		out_Model = {}
-		"""
-		init = []
+		
+
+		# Force last beat 
+
+
+		#init = []
 		init_dict = dict()
-		for key in V[0]:
-			init.append(b0[key])
+		#for key in V[0]:
+		#	init.append(b0[key])
 		init_dict['initial'] = dict()
-		init_dict['initial']['prob'] = list(init/sum(init))
-		init_dict['initial']['pattern'] = V[0].keys()
+		init_dict['initial']['prob'] = 1.00
+		init_dict['initial']['pattern'] = target[0]
 		#print init_dict
-		"""
+		
 		for i in range(len(V)):
 			out_Model[i] = {}
 			#print "step:",i
@@ -187,18 +198,18 @@ class build(pyext._class):
 				for v in val:
 					tmp.append(b[key, int(v)])
 				#print list(tmp/sum(tmp))
-				print tmp
+				#print tmp
 				out_Model[i][key]['pattern'] = [int(x) for x in val]
 				out_Model[i][key]['probs'] = list(tmp/sum(tmp))
 		#print out_Model
 		with open( path + 'NHModel_var.json', 'w') as outfile:
 			json.dump(out_Model, outfile)
 			outfile.close()
-		"""	
+		
 		with open( path + 'Model_init_var.json', 'w') as outfile:
 			json.dump(init_dict, outfile)
 			outfile.close()
-		"""	
+		
 		print("Model build!")
 		self._outlet(1,1)	
 

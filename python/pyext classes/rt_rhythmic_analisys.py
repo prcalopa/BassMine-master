@@ -91,3 +91,36 @@ class kick_analysis(pyext._class):
 
 		self._outlet(1,kick_id)
 
+class bassline_analysis(pyext._class):
+	
+
+	# number of inlets and outlets
+	_inlets=2
+	_outlets=2
+
+
+	def bang_1(self):
+		print "Bang into first inlet"
+
+	def int_1(self,f):
+		print "Integer",f,"into first inlet"
+		if (0<=f<2):
+			style = f
+			print "Style changed!"
+
+	def float_1(self,f):
+		print "Float",f,"into first inlet"
+
+	def list_1(self,*s):
+		# print "List",s,"into first inlet"
+		target = list(s)
+		####
+		# Quantize
+		bass_rhythm = quantize_pattern(target)
+		#print kick_rhythm
+		# Translate
+		bass_id = translate_rhythm(bass_rhythm)
+		
+
+		self._outlet(1,bass_id)		
+

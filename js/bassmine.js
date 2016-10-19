@@ -281,6 +281,88 @@ function createPattern()
 
 }
 
+function create_variation_Pattern()
+{
+	var d = new Dict("var_init");
+
+	// an optional 'true' arg to getnames() will get all dictionary names
+	// rather than just explicitly named dictionaries
+	//var names = d.getnames();
+	
+	//post("Names of existing dictionaries: " + names);
+	//post();	
+	out_patt_id = [];
+	var tmp_id = 0;
+	// getkeys() will return an array of strings, each string being a key for our dict
+	var keys = d.getkeys();
+	
+	// access the name of a dict object as a property of the dict object
+	var name = d.name;
+
+	//post_info(name, keys);
+
+	//post("Initial patterns:")
+	//post(d.get("initial").get("pattern"));
+	//post()
+	//post("Initial probs:")
+	//post(d.get("initial").get("prob"));
+	//post()
+
+	// Initial probabilities
+	i_prob = d.get("initial").get("prob");
+	i_patt = d.get("initial").get("pattern");
+	//post(i_patt);post();
+	//OUTLET to see prob distribution
+	//outlet(0,i_prob)
+
+	// Sample probabilities
+	//post("Chosen pattern")
+	// If only one possible pattern avoid computing any sampling
+	if (i_prob.length > 1)
+	{
+		tmp_id = i_patt[random_sample(i_prob)];
+		out_patt_id.push(tmp_id);
+		//post(tmp_id);
+	}
+	else 
+	{
+		out_patt_id.push(i_patt);
+		//post(i_patt);
+	}	
+	//post();
+	//post("TEST:");post(out_patt_id); post();
+	// Random Walk routine
+	d = new Dict("var_model");
+
+	// Get from dictionary the pdf of last chosen pattern 
+	//post(d.get("0").get(out_patt_id[0].toString()).get("pattern"));post();
+	//post(d.get("0").get(out_patt_id[0].toString()).get("probs"));post();
+
+	for( var i=0; i<d.getkeys().length; i++)
+	{
+		post(i);post();
+		post(out_patt_id[i]);post();
+		var prob = d.get(i.toString()).get(out_patt_id[i].toString()).get("probs")
+		var patt = d.get(i.toString()).get(out_patt_id[i].toString()).get("pattern")
+		//post(d.getkeys());
+		if (prob.length > 1)
+		{
+			tmp_id = patt[random_sample(prob)];
+			out_patt_id.push(tmp_id);
+			//post(tmp_id);
+		}
+		else 
+		{
+			out_patt_id.push(patt);
+			//post(i_patt);
+		}	
+		//post();
+		////post("TEST:");post(out_patt_id); post();
+	}
+	//outlet(1,out_patt_id)
+
+}
+
 
 function bang()
 {
@@ -300,6 +382,14 @@ function bang()
 	// x.remove("pig");
 	// x.clear();
 	
+}
+
+function variation()
+{
+	create_variation_Pattern();
+	post();
+	genBassline();
+	writeNotesDict();
 }
 
 // function for generate new melody; same start times

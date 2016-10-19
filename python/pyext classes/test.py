@@ -85,62 +85,7 @@ for i in range(1,len(target)-1):
 V.append(dict())
 
 V[len(target)-1][target[len(target)-1]] = Dom_B[target[len(target)-1]]		
-"""
-for i in range(1,len(target)-1):
 
-	V.append(dict())
-
-	if target[i]>=0:
-		#print "No variation in current beat"
-
-		if target[i-1]>=0:
-			#print "No variation in previous beat"
-			V[i-1][target[i-1]] = set([str(target[i])])
-		else:	
-			#print "Variation in previous beat"
-			# for each continuation check those that match with current beat value
-			# CHANGE
-			if target[i+1] < 0:
-				V[i-1] = Dom_B
-			else:
-				#print "Next beat fixed"	
-				for key, value in Dom_B.iteritems():
-					#print value
-					#print target[i+1]
-					tmp_int = value.intersection(str(target[i+1]))
-					#print tmp_int
-					# also check not to include keys that are not possible
-					if len(tmp_int)>0:
-						if key == target[i]:
-							V[i-1][key] = tmp_int
-
-
-		#print "\n"	
-
-	else:
-		#print "Variation in current beat"	
-
-		if target[i-1]>=0:
-		#	print "No variation in previous beat"
-			V[i-1][target[i-1]] = Dom_B[target[i-1]]
-		else:	
-		#	print "Variation in previous beat"
-			# CHANGE
-			if target[i+1] < 0:
-				V[i-1] = Dom_B
-			else:
-		#		print "Next beat fixed"	
-				for key, value in Dom_B.iteritems():
-					#print value
-		#			print target[i+1]
-					tmp_int = value.intersection(str(target[i+1]))
-		#			print tmp_int
-					if len(tmp_int)>0:
-						if key == target[i]:
-							V[i-1][key] = tmp_int 
-
-		#print "\n"	
-"""
 #print V		
 for v in V:
 	print v
