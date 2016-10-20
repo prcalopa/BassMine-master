@@ -197,6 +197,7 @@ Note.prototype.getMuted = function() {
 
 
 //}
+var pitch_cont;
 
 function genPattern()
 {
@@ -243,11 +244,113 @@ function genPattern()
 
 }
 
+function genPattern_v2()
+{
+  
+  //post("New Pattern");
+  //post();
+  
+  var note_clip = new Dict("clip_notes_live");
+  note_clip.import_json("notes.json");
+  var notes = [];
+  
+  var _pitch;
+  var _start;
+  var _dur;
+  var _vel;
+
+  
+  for (var i = 0; i < note_clip.getkeys().length; i++) 
+  {
+    //post("Que pasa??");
+    var tmp = note_clip.get(i.toString())
+    //post(tmp[1]);
+    // Pitch should be determined
+    if ((tmp[1] * 4) < pitch_cont.length) 
+    {
+        tmp_pitch = pitch_cont[tmp[1] * 4]
+        _pitch = tmp_pitch + (_root_note + (12 * _octave));
+    }
+    _start = tmp[1];
+    _dur = tmp[2];
+    _vel = tmp[3];
+
+
+    notes.push( new Note(_pitch, _start, _dur, _vel, 0) );
+  }
+  
+  var clip = new Clip("live_set view highlighted_clip_slot clip");
+  post(clip.getTrack());post();
+  post(clip.getSlot());post();
+  ////clip.setNotes(notes);
+  ////clip.replaceSelectedNotes(notes);
+  if(clip.getTrack() == bass_track_id)
+  {
+    post("New Bassline");post();
+    clip.replaceAllNotes(notes);
+  }
+  //clip.setLoopEnd();
+
+}
+
+function updatePatternPitch()
+{
+  
+  pitch_cont = arguments;
+  //post("New Pattern");
+  //post();
+  
+  var note_clip = new Dict("clip_notes_live");
+  note_clip.import_json("notes.json");
+  var notes = [];
+  
+  var _pitch;
+  var _start;
+  var _dur;
+  var _vel;
+
+  
+  for (var i = 0; i < note_clip.getkeys().length; i++) 
+  {
+    //post("Que pasa??");
+    var tmp = note_clip.get(i.toString())
+    //post(tmp[1]);
+    // Pitch should be determined
+    if ((tmp[1] * 4) < pitch_cont.length) 
+    {
+        tmp_pitch = pitch_cont[tmp[1] * 4]
+        _pitch = tmp_pitch + (_root_note + (12 * _octave));
+    }
+    // Consideer variable length
+    
+    _start = tmp[1];
+    _dur = tmp[2];
+    _vel = tmp[3];
+
+
+    notes.push( new Note(_pitch, _start, _dur, _vel, 0) );
+  }
+  
+  var clip = new Clip("live_set view highlighted_clip_slot clip");
+  post(clip.getTrack());post();
+  post(clip.getSlot());post();
+  ////clip.setNotes(notes);
+  ////clip.replaceSelectedNotes(notes);
+  if(clip.getTrack() == bass_track_id)
+  {
+    post("New Bassline");post();
+    clip.replaceAllNotes(notes);
+  }
+  //clip.setLoopEnd();
+
+}
+
 function new_clip()
 {
   // CREATE NEW PATTERN
   post("HEYYYYYYY");
   genPattern();
+  //updatePatternPitch();
 }
 
 function readClip()
