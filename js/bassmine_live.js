@@ -349,8 +349,8 @@ function new_clip()
 {
   // CREATE NEW PATTERN
   post("HEYYYYYYY");
-  genPattern();
-  updatePatternPitch();
+  genPattern_v2();
+  //updatePatternPitch();
 }
 
 function readClip()
