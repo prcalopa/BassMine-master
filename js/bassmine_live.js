@@ -1,5 +1,5 @@
 inlets = 1;
-outlets = 1;
+outlets = 2;
 autowatch = 1;
 
 //Globals
@@ -350,7 +350,7 @@ function new_clip()
   // CREATE NEW PATTERN
   post("HEYYYYYYY");
   genPattern();
-  //updatePatternPitch();
+  updatePatternPitch();
 }
 
 function readClip()
